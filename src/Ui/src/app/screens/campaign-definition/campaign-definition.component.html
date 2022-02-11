@@ -1,0 +1,137 @@
+<app-main-content>
+  <app-step [data]="stepData"></app-step>
+  <div class="container">
+    <div class="box">
+      <div class="p-4">
+        <div class="row">
+          <div class="col-6 m-auto">
+            <div class="row">
+              <div class="col pl-20px">
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input scale-2x" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label ms-2" for="flexCheckDefault">
+                      Aktif / Pasif
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input scale-2x" type="checkbox" value="" id="flexCheckDefault2">
+                    <label class="form-check-label ms-2" for="flexCheckDefault2">
+                      Birleştirilebilir
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <label for="campaignName">Kampanya Adı</label>
+              <input type="text" class="form-control" name="campaignName" id="campaignName">
+            </div>
+            <div class="form-group mt-3">
+              <label for="campaignCode">Kampanya Kodu</label>
+              <input type="text" class="form-control" name="campaignCode" id="campaignCode" disabled
+                     value="15162516521">
+            </div>
+            <div class="form-group mt-3">
+              <label for="descriptionLanguage">Açıklama Dil Seçeneği</label>
+              <select name="descriptionLanguage" id="descriptionLanguage" class="form-select">
+                <option value="">Seçiniz</option>
+                <option value="TR">TR</option>
+                <option value="EN">EN</option>
+              </select>
+            </div>
+            <div class="form-group mt-3">
+              <label for="description">Açıklama Detayı</label>
+              <input type="text" class="form-control" name="description" id="description">
+            </div>
+            <div class="form-group mt-3">
+              <label for="titleLanguage">Başlık Dil Seçeneği</label>
+              <select name="titleLanguage" id="titleLanguage" class="form-select">
+                <option value="">Seçiniz</option>
+                <option value="TR">TR</option>
+                <option value="EN">EN</option>
+              </select>
+            </div>
+            <div class="form-group mt-3">
+              <label for="title">Başlık</label>
+              <input type="text" class="form-control" name="title" id="title">
+            </div>
+            <div class="form-group mt-3">
+              <label for="campaignDetailLanguage">Kampanya Detayı Dil Seçeneği</label>
+              <select name="campaignDetailLanguage" id="campaignDetailLanguage" class="form-select">
+                <option value="">Seçiniz</option>
+                <option value="TR">TR</option>
+                <option value="EN">EN</option>
+              </select>
+            </div>
+            <div class="form-group mt-3">
+              <label for="campaignDetail">Kampanya Detayı</label>
+              <input type="text" class="form-control" name="campaignDetail" id="campaignDetail">
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group mt-3">
+                  <label for="startDate">Başlama Tarihi</label>
+                  <input type="text" class="form-control" name="startDate" id="startDate">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group mt-3">
+                  <label for="endDate">Bitiş Tarihi</label>
+                  <input type="text" class="form-control" name="endDate" id="endDate">
+                </div>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <label for="campaignListImage" class="form-label">Kampanya Liste Görseli</label>
+              <input class="form-control" type="file" name="campaignListImage" id="campaignListImage">
+            </div>
+            <div class="form-group mt-3">
+              <label for="campaignDetailImage" class="form-label">Kampanya Detay Görseli</label>
+              <input class="form-control" type="file" name="campaignDetailImage" id="campaignDetailImage">
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group mt-3">
+                  <label for="order">Sıralama</label>
+                  <input type="text" class="form-control" name="order" id="order">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group mt-3">
+                  <label for="maxUser">Max Kullanıcı</label>
+                  <input type="text" class="form-control" name="maxUser" id="maxUser">
+                </div>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <label for="sector">Sektör</label>
+              <select name="sector" id="sector" class="form-select">
+                <option value="">Seçiniz</option>
+              </select>
+            </div>
+            <div class="form-group mt-3">
+              <label for="view">Görüntüleme</label>
+              <select name="view" id="view" class="form-select">
+                <option value="">Seçiniz</option>
+              </select>
+            </div>
+            <div class="form-group mt-3">
+              <label for="action">Aksiyon</label>
+              <select name="action" id="action" class="form-select">
+                <option value="">Seçiniz</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+      <button class="btn btn-orange px-5" [routerLink]="['./rules']">Devam</button>
+    </div>
+  </div>
+</app-main-content>

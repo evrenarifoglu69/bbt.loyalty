@@ -1,0 +1,50 @@
+<app-main-content>
+  <app-step [data]="stepData"></app-step>
+  <div class="container">
+    <div class="box">
+      <div class="p-4">
+        <div class="row">
+          <div class="col-6 m-auto">
+            <div class="form-group mt-3">
+              <label for="involvedType">Dahil Olma Şekli</label>
+              <select name="involvedType" id="involvedType" class="form-select">
+                <option value="">Seçiniz</option>
+              </select>
+            </div>
+            <div class="form-group mt-3">
+              <label for="identityNo">TCKN</label>
+              <input type="text" class="form-control" name="identityNo" id="identityNo">
+            </div>
+            <div class="form-group mt-3">
+              <label for="businessLine">İş Kolu</label>
+              <select name="businessLine" id="businessLine" class="form-select">
+                <option value="">Seçiniz</option>
+              </select>
+            </div>
+            <div class="form-group mt-3">
+              <label for="branch">Şube</label>
+              <select name="branch" id="branch" class="form-select">
+                <option value="">Seçiniz</option>
+              </select>
+            </div>
+            <div class="form-group mt-3">
+              <label for="customerType">Müşteri Tipi</label>
+              <select name="customerType" id="customerType" class="form-select">
+                <option value="">Seçiniz</option>
+              </select>
+            </div>
+            <div class="form-group mt-3">
+              <label for="campaignStartPeriod">Kampanya Başlama Dönemi</label>
+              <select name="campaignStartPeriod" id="campaignStartPeriod" class="form-select">
+                <option value="">Seçiniz</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+      <button class="btn btn-orange px-5" [routerLink]="['../target-selection']">Devam</button>
+    </div>
+  </div>
+</app-main-content>
