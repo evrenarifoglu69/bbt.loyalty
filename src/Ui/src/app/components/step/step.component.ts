@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CampaignDefinitionService} from "../../services/campaign-definition.service";
+import {StepService} from "../../services/step.service";
 
 @Component({
   selector: 'app-step',
@@ -10,8 +10,8 @@ export class StepComponent implements OnInit {
   @Input('data') data: any;
   isFinished;
 
-  constructor(private campaignDefinitionService: CampaignDefinitionService) {
-    this.isFinished = this.campaignDefinitionService.isFinished;
+  constructor(private stepService: StepService) {
+    this.isFinished = this.stepService.isFinished;
   }
 
   ngOnInit(): void {

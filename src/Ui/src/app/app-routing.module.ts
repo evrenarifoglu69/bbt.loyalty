@@ -10,7 +10,11 @@ const routes: Routes = [
     children: [
       {
         path: 'campaign-definition',
-        loadChildren: () => import('./screens/campaign-definition/campaign-definition.module').then(m => m.CampaignDefinitionModule)
+        loadChildren: () => import('./screens/campaign-definition/campaign-definition.module').then(m => m.CampaignDefinitionModule),
+      },
+      {
+        path: 'campaign-limits',
+        loadChildren: () => import('./screens/campaign-limits/campaign-limits.module').then(m => m.CampaignLimitsModule)
       }
     ]
   },

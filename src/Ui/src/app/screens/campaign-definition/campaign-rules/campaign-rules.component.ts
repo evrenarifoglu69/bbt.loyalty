@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CampaignDefinitionService} from "../../../services/campaign-definition.service";
+import {StepService} from "../../../services/step.service";
 
 @Component({
   selector: 'app-campaign-rules',
@@ -9,9 +10,10 @@ import {CampaignDefinitionService} from "../../../services/campaign-definition.s
 export class CampaignRulesComponent implements OnInit {
   stepData;
 
-  constructor(private campaignDefinitionService: CampaignDefinitionService) {
-    this.campaignDefinitionService.updateStep(2);
-    this.stepData = this.campaignDefinitionService.stepData;
+  constructor(private stepService: StepService, private campaignDefinitionService: CampaignDefinitionService) {
+    this.stepService.setSteps(this.campaignDefinitionService.stepData);
+    this.stepService.updateStep(2);
+    this.stepData = this.stepService.stepData;
   }
 
   ngOnInit(): void {

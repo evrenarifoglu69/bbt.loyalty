@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CampaignDefinitionService} from "../../../services/campaign-definition.service";
+import {StepService} from "../../../services/step.service";
 
 @Component({
   selector: 'app-campaign-gains',
@@ -13,9 +14,10 @@ export class CampaignGainsComponent implements OnInit {
   selectedText = '';
   alwaysChecked = true;
 
-  constructor(private campaignDefinitionService: CampaignDefinitionService) {
-    this.campaignDefinitionService.updateStep(4);
-    this.stepData = this.campaignDefinitionService.stepData;
+  constructor(private stepService: StepService, private campaignDefinitionService: CampaignDefinitionService) {
+    this.stepService.setSteps(this.campaignDefinitionService.stepData);
+    this.stepService.updateStep(4);
+    this.stepData = this.stepService.stepData;
   }
 
   ngOnInit(): void {
@@ -23,9 +25,9 @@ export class CampaignGainsComponent implements OnInit {
 
   closePanel() {
     this.showForm = false;
-    setTimeout(()=>{
+    setTimeout(() => {
       this.alwaysChecked = true;
-    },100);
+    }, 100);
   }
 
   allChanged(e: any, title: string) {
