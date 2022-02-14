@@ -9,7 +9,6 @@ export class TurkishLiraDirective implements OnInit {
     private elementRef: ElementRef,
     private formatCurrencyPipe: TurkishLiraPipe
   ) {
-    console.log('directive init')
     this.el = this.elementRef.nativeElement;
   }
 
