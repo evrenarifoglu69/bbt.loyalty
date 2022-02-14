@@ -7,6 +7,8 @@ import {OnlyNumberDirective} from "../directives/only-number.directive";
 import {StepComponent} from "../components/step/step.component";
 import {UiSwitchModule} from 'ngx-ui-switch';
 import {FinishComponent} from "../components/finish/finish.component";
+import {TurkishLiraDirective} from "../directives/turkish-lira.directive";
+import {TurkishLiraPipe} from "../pipes/turkish-lira.pipe";
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import {FinishComponent} from "../components/finish/finish.component";
     BackButtonDirective,
     OnlyNumberDirective,
     StepComponent,
-    FinishComponent
+    FinishComponent,
+    TurkishLiraDirective,
+    TurkishLiraPipe
   ],
   imports: [CommonModule, RouterModule, UiSwitchModule],
   exports: [
@@ -23,8 +27,11 @@ import {FinishComponent} from "../components/finish/finish.component";
     OnlyNumberDirective,
     StepComponent,
     UiSwitchModule,
-    FinishComponent
-  ]
+    FinishComponent,
+    TurkishLiraDirective,
+    TurkishLiraPipe
+  ],
+  providers:[TurkishLiraDirective,TurkishLiraPipe]
 })
 export class SharedModule {
 }
