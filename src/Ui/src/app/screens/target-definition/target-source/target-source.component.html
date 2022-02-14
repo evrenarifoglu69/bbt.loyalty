@@ -1,0 +1,64 @@
+<app-main-content>
+  <app-step [data]="stepData"></app-step>
+  <div class="container">
+    <div class="box p-4">
+      <div class="col-12 col-md-6 m-md-auto">
+        <div class="form-group">
+          <label for="source">Hedef Kaynağı</label>
+          <select name="source" id="source" class="form-select" [(ngModel)]="source">
+            <option [value]="null">Seçiniz</option>
+            <option [value]="1">Akış</option>
+            <option [value]="2">Sorgu</option>
+          </select>
+        </div>
+        <div class="stream-panel mt-3" *ngIf="source==1">
+          <div class="form-group">
+            <label for="streamName">Akış İsmi</label>
+            <input type="text" class="form-control" name="streamName" id="streamName">
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <div class="form-group">
+                <label for="totalPrice">Toplam Tutar</label>
+                <input type="text" class="form-control" name="totalPrice" id="totalPrice">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="processCount">İşlem Adedi</label>
+                <input type="text" class="form-control" name="processCount" id="processCount">
+              </div>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <label for="triggerTime">Tetiklenme Zamanı</label>
+            <select name="triggerTime" id="triggerTime" class="form-select">
+              <option [value]="null">Seçiniz</option>
+              <option [value]="1">Hedefe Ulaşıldığı Anda</option>
+            </select>
+          </div>
+        </div>
+        <div class="query-panel mt-3" *ngIf="source==2">
+          <div class="form-group">
+            <label for="condition">Koşul</label>
+            <input type="text" class="form-control" name="condition" id="condition">
+          </div>
+          <div class="form-group mt-3">
+            <label for="query">Sorgu</label>
+            <textarea name="query" id="query" class="form-control" rows="5"></textarea>
+          </div>
+          <div class="form-group mt-3">
+            <label for="verificationTime">Kampanya Doğrulama Zamanı</label>
+            <select name="verificationTime" id="verificationTime" class="form-select">
+              <option [value]="null">Seçiniz</option>
+              <option [value]="1">İlk Kontrol Edildiğinde</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+      <button class="btn btn-orange px-5" [routerLink]="['../finish']">Devam</button>
+    </div>
+  </div>
+</app-main-content>

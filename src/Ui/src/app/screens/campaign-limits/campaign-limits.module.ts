@@ -3,14 +3,17 @@ import {CommonModule} from '@angular/common';
 import {CampaignLimitsComponent} from "./campaign-limits.component";
 import {SharedModule} from "../../modules/shared.module";
 import {RouterModule, Routes} from "@angular/router";
+import {CampaignLimitsFinishComponent} from './campaign-limits-finish/campaign-limits-finish.component';
 
 const routes: Routes = [
-  {path: '', component: CampaignLimitsComponent}
+  {path: '', component: CampaignLimitsComponent},
+  {path: 'finish', component: CampaignLimitsFinishComponent},
 ]
 
 @NgModule({
   declarations: [
-    CampaignLimitsComponent
+    CampaignLimitsComponent,
+    CampaignLimitsFinishComponent
   ],
   imports: [
     CommonModule,

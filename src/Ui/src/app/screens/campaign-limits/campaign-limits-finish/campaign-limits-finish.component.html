@@ -1,0 +1,16 @@
+<app-main-content>
+  <app-step [data]="stepData"></app-step>
+  <div class="container">
+    <div class="box">
+      <div class="p-5">
+        <app-finish
+          title="TEBRİKLER"
+          subTitle="Kampanya Çatı Limitleri başarılı bir şekilde kaydedildi."
+          buttonText="Yeni Kampanya Çatı Limiti"
+          (callback)="redirect()"
+        >
+        </app-finish>
+      </div>
+    </div>
+  </div>
+</app-main-content>
