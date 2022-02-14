@@ -1,42 +1,62 @@
 <app-main-content>
   <app-step [data]="stepData"></app-step>
   <div class="container">
-    <div class="box p-4">
-      <div class="col-12 col-md-6 m-md-auto">
-        <div class="form-group">
-          <label for="campaignName">Kampanya Adı</label>
-          <select name="campaignName" id="campaignName" class="form-select">
-            <option value="">Seçiniz</option>
-          </select>
-        </div>
-        <div class="form-group mt-3">
-          <label for="gainFrequency">Kazanım Sıklığı</label>
-          <select name="gainFrequency" id="gainFrequency" class="form-select">
-            <option value="">Seçiniz</option>
-          </select>
-        </div>
-        <div class="form-group mt-3">
-          <label for="currency">Para Birimi</label>
-          <select name="currency" id="currency" class="form-select">
-            <option value="">Seçiniz</option>
-          </select>
-        </div>
-        <div class="form-group mt-3">
-          <label for="maxPrice">Çatı Max Tutar</label>
-          <input type="text" class="form-control" name="maxPrice" id="maxPrice">
-        </div>
-        <div class="form-group mt-3">
-          <label for="ratio">Çatı Oranı</label>
-          <input type="text" class="form-control" name="ratio" id="ratio">
-        </div>
-        <div class="form-group mt-3">
-          <label for="benefit">Çatı Max Yararlanma</label>
-          <input type="text" class="form-control" name="benefit" id="benefit">
+    <form [formGroup]="formGroup">
+      <div class="box p-4">
+        <div class="col-12 col-md-6 m-md-auto">
+          <div class="form-group">
+            <label for="campaignName">Kampanya Adı</label>
+            <select name="campaignName" id="campaignName" class="form-select" formControlName="campaignName"
+                    [ngClass]="{ 'is-invalid': submitted && f.campaignName.invalid }">
+              <option value="">Seçiniz</option>
+              <option [value]="1">Ödeme Cashback</option>
+              <option [value]="2">Fatura Cashback</option>
+            </select>
+            <div *ngIf="submitted && f.campaignName.errors" class="invalid-feedback">
+              <div *ngIf="f.campaignName.errors.required">Kampanya Adı seçilmelidir.</div>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <label for="gainFrequency">Kazanım Sıklığı</label>
+            <select name="gainFrequency" id="gainFrequency" class="form-select" formControlName="gainFrequency"
+                    [ngClass]="{ 'is-invalid': submitted && f.gainFrequency.invalid }">
+              <option value="">Seçiniz</option>
+              <option [value]="1">Anlık</option>
+              <option [value]="2">Yıllık</option>
+            </select>
+            <div *ngIf="submitted && f.gainFrequency.errors" class="invalid-feedback">
+              <div *ngIf="f.gainFrequency.errors.required">Kazanım Sıklığı seçilmelidir.</div>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <label for="currency">Para Birimi</label>
+            <select name="currency" id="currency" class="form-select" formControlName="currency"
+                    [ngClass]="{ 'is-invalid': submitted && f.currency.invalid }">
+              <option value="">Seçiniz</option>
+              <option [value]="1">TRL</option>
+              <option [value]="2">USD</option>
+            </select>
+            <div *ngIf="submitted && f.currency.errors" class="invalid-feedback">
+              <div *ngIf="f.currency.errors.required">Para Birimi seçilmelidir.</div>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <label for="maxPrice">Çatı Max Tutar</label>
+            <input type="text" class="form-control" name="maxPrice" id="maxPrice" formControlName="maxPrice" turkishLira>
+          </div>
+          <div class="form-group mt-3">
+            <label for="ratio">Çatı Oranı</label>
+            <input type="text" class="form-control" name="ratio" id="ratio">
+          </div>
+          <div class="form-group mt-3">
+            <label for="benefit">Çatı Max Yararlanma</label>
+            <input type="text" class="form-control" name="benefit" id="benefit">
+          </div>
         </div>
       </div>
-    </div>
-    <div class="d-flex justify-content-center mt-4">
-      <button class="btn btn-orange px-5" [routerLink]="['./finish']">Devam</button>
-    </div>
+      <div class="d-flex justify-content-center mt-4">
+        <button class="btn btn-orange px-5" (click)="continue()">Devam</button>
+      </div>
+    </form>
   </div>
 </app-main-content>

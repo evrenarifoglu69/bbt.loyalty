@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {LoginComponent} from "./screens/login/login.component";
 import {DefaultLayoutComponent} from "./layouts/default-layout/default-layout.component";
 import {HeaderComponent} from "./components/header/header.component";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,8 +18,7 @@ import {HeaderComponent} from "./components/header/header.component";
     AppRoutingModule
   ],
   providers: [],
-  exports: [
-  ],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -4,6 +4,7 @@ import {CampaignLimitsComponent} from "./campaign-limits.component";
 import {SharedModule} from "../../modules/shared.module";
 import {RouterModule, Routes} from "@angular/router";
 import {CampaignLimitsFinishComponent} from './campaign-limits-finish/campaign-limits-finish.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {path: '', component: CampaignLimitsComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ReactiveFormsModule
   ]
 })
 export class CampaignLimitsModule {
