@@ -5,6 +5,7 @@ import {SharedModule} from "../../modules/shared.module";
 import {RouterModule, Routes} from "@angular/router";
 import {TargetSourceComponent} from './target-source/target-source.component';
 import {TargetFinishComponent} from './target-finish/target-finish.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {path: '', component: TargetDefinitionComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ReactiveFormsModule
   ]
 })
 export class TargetDefinitionModule {

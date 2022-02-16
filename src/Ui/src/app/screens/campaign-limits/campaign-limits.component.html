@@ -46,7 +46,7 @@
           </div>
           <div class="form-group mt-3">
             <label for="ratio">Çatı Oranı</label>
-            <input type="text" class="form-control" name="ratio" id="ratio">
+            <input type="text" class="form-control" name="ratio" id="ratio" onlyNumber>
           </div>
           <div class="form-group mt-3">
             <label for="benefit">Çatı Max Yararlanma</label>
@@ -55,7 +55,7 @@
         </div>
       </div>
       <div class="d-flex justify-content-center mt-4">
-        <button class="btn btn-orange px-5" (click)="continue()">Devam</button>
+        <button class="btn btn-orange px-5" type="button" (click)="continue()">Devam</button>
       </div>
     </form>
   </div>

@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {MainContentComponent} from "../components/main-content/main-content.component";
-import {CommonModule} from "@angular/common";
+import {CommonModule, DecimalPipe} from "@angular/common";
 import {BackButtonDirective} from "../directives/back-button.directive";
 import {RouterModule} from "@angular/router";
 import {OnlyNumberDirective} from "../directives/only-number.directive";
@@ -8,7 +8,6 @@ import {StepComponent} from "../components/step/step.component";
 import {UiSwitchModule} from 'ngx-ui-switch';
 import {FinishComponent} from "../components/finish/finish.component";
 import {TurkishLiraDirective} from "../directives/turkish-lira.directive";
-import {TurkishLiraPipe} from "../pipes/turkish-lira.pipe";
 
 @NgModule({
   declarations: [
@@ -17,8 +16,7 @@ import {TurkishLiraPipe} from "../pipes/turkish-lira.pipe";
     OnlyNumberDirective,
     StepComponent,
     FinishComponent,
-    TurkishLiraDirective,
-    TurkishLiraPipe
+    TurkishLiraDirective
   ],
   imports: [CommonModule, RouterModule, UiSwitchModule],
   exports: [
@@ -28,10 +26,9 @@ import {TurkishLiraPipe} from "../pipes/turkish-lira.pipe";
     StepComponent,
     UiSwitchModule,
     FinishComponent,
-    TurkishLiraDirective,
-    TurkishLiraPipe
+    TurkishLiraDirective
   ],
-  providers:[TurkishLiraDirective,TurkishLiraPipe]
+  providers: [DecimalPipe]
 })
 export class SharedModule {
 }

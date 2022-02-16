@@ -7,6 +7,7 @@ import { CampaignRulesComponent } from './campaign-rules/campaign-rules.componen
 import { CampaignTargetSelectionComponent } from './campaign-target-selection/campaign-target-selection.component';
 import { CampaignGainsComponent } from './campaign-gains/campaign-gains.component';
 import { CampaignFinishComponent } from './campaign-finish/campaign-finish.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {path: '', component: CampaignDefinitionComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
     SharedModule,
     CommonModule,
     RouterModule.forChild(routes),
+    ReactiveFormsModule
   ]
 })
 export class CampaignDefinitionModule {

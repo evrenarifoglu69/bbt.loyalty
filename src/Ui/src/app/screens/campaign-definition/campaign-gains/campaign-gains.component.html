@@ -1,178 +1,186 @@
 <app-main-content>
   <app-step [data]="stepData"></app-step>
   <div class="container">
-    <div class="box">
-      <div class="p-4">
-        <div class="col-6 m-auto">
-          <div class="row">
-            <div class="col">
+    <form [formGroup]="formGroup">
+      <div class="box">
+        <div class="p-4">
+          <div class="col-6 m-auto">
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Kazanım Kanalı</label>
+                </div>
+              </div>
+              <div class="col" [hidden]="!showForm">
+                <div class="d-flex justify-content-end">
+                  {{selectedText}}
+                  <ui-switch class="d-flex w-content ms-2" size="small"
+                             (changeEvent)="closePanel()"></ui-switch>
+                </div>
+              </div>
+            </div>
+            <hr class="blue">
+            <div class="form-panel" [hidden]="!showForm">
               <div class="form-group">
-                <label>Kazanım Kanalı</label>
+                <label for="currency">Para Birimi</label>
+                <select class="form-select" name="currency" id="currency" formControlName="currency"
+                        [ngClass]="{ 'is-invalid': submitted && f.currency.invalid }">
+                  <option value="">Seçiniz</option>
+                  <option [value]="1">TRL</option>
+                  <option [value]="2">USD</option>
+                </select>
+                <div *ngIf="submitted && f.currency.errors" class="invalid-feedback">
+                  <div *ngIf="f.currency.errors.required">Para Birimi seçilmelidir.</div>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <label for="price">Kazanım Tutarı</label>
+                <input type="text" class="form-control" name="price" id="price" turkishLira formControlName="price">
+              </div>
+              <div class="form-group mt-3">
+                <label for="ratio">Kazanım Oranı</label>
+                <input type="text" class="form-control" name="ratio" id="ratio" formControlName="ratio">
+              </div>
+              <div class="form-group mt-3">
+                <label for="maxPrice">Max Tutar</label>
+                <input type="text" class="form-control" name="maxPrice" id="maxPrice" formControlName="maxPrice">
+              </div>
+              <div class="form-group mt-3">
+                <label for="maxBenefit">Max Yararlanma</label>
+                <input type="text" class="form-control" name="maxBenefit" id="maxBenefit" formControlName="maxBenefit">
               </div>
             </div>
-            <div class="col" [hidden]="!showForm">
-              <div class="d-flex justify-content-end">
-                {{selectedText}}
-                <ui-switch class="d-flex w-content ms-2" size="small" [(ngModel)]="alwaysChecked"
-                           (changeEvent)="closePanel()"></ui-switch>
+            <div class="switch-panel" [hidden]="showForm">
+              <div class="row mt-3">
+                <div class="col">
+                  <div class="row align-items-center">
+                    <div class="col-3">Tümü</div>
+                    <div class="col">
+                      <ui-switch class="d-flex w-content" size="small"
+                                 (changeEvent)="allChanged($event,'Tümü')"></ui-switch>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                </div>
               </div>
-            </div>
-          </div>
-          <hr class="blue">
-          <div class="form-panel" [hidden]="!showForm">
-            <div class="form-group">
-              <label for="currency">Para Birimi</label>
-              <select class="form-select" name="currency" id="currency">
-                <option value="">Seçiniz</option>
-              </select>
-            </div>
-            <div class="form-group mt-3">
-              <label for="price">Kazanım Tutarı</label>
-              <input type="text" class="form-control" name="price" id="price">
-            </div>
-            <div class="form-group mt-3">
-              <label for="ratio">Kazanım Oranı</label>
-              <input type="text" class="form-control" name="ratio" id="ratio">
-            </div>
-            <div class="form-group mt-3">
-              <label for="maxPrice">Max Tutar</label>
-              <input type="text" class="form-control" name="maxPrice" id="maxPrice">
-            </div>
-            <div class="form-group mt-3">
-              <label for="maxBenefit">Max Yararlanma</label>
-              <input type="text" class="form-control" name="maxBenefit" id="maxBenefit">
-            </div>
-          </div>
-          <div class="switch-panel" [hidden]="showForm">
-            <div class="row mt-3">
-              <div class="col">
-                <div class="row align-items-center">
-                  <div class="col-3">Tümü</div>
-                  <div class="col">
-                    <ui-switch class="d-flex w-content" size="small"
-                               (changeEvent)="allChanged($event,'Tümü')"></ui-switch>
+              <div class="row mt-3">
+                <div class="col">
+                  <div class="row align-items-center">
+                    <div class="col-3">Batch</div>
+                    <div class="col">
+                      <ui-switch class="d-flex w-content" size="small"
+                                 (changeEvent)="allChanged($event,'Batch')"></ui-switch>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row align-items-center">
+                    <div class="col text-end">Sms</div>
+                    <div class="col-auto">
+                      <ui-switch class="d-flex w-content" size="small"
+                                 (changeEvent)="allChanged($event,'Sms')"></ui-switch>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col">
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col">
-                <div class="row align-items-center">
-                  <div class="col-3">Batch</div>
-                  <div class="col">
-                    <ui-switch class="d-flex w-content" size="small"
-                               (changeEvent)="allChanged($event,'Batch')"></ui-switch>
+              <div class="row mt-3">
+                <div class="col">
+                  <div class="row align-items-center">
+                    <div class="col-3">Bayi</div>
+                    <div class="col">
+                      <ui-switch class="d-flex w-content" size="small"
+                                 (changeEvent)="allChanged($event,'Bayi')"></ui-switch>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row align-items-center">
+                    <div class="col text-end">Şube</div>
+                    <div class="col-auto">
+                      <ui-switch class="d-flex w-content" size="small"
+                                 (changeEvent)="allChanged($event,'Şube')"></ui-switch>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="row align-items-center">
-                  <div class="col text-end">Sms</div>
-                  <div class="col-auto">
-                    <ui-switch class="d-flex w-content" size="small"
-                               (changeEvent)="allChanged($event,'Sms')"></ui-switch>
+              <div class="row mt-3">
+                <div class="col">
+                  <div class="row align-items-center">
+                    <div class="col-3">Diğer</div>
+                    <div class="col">
+                      <ui-switch class="d-flex w-content" size="small"
+                                 (changeEvent)="allChanged($event,'Diğer')"></ui-switch>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row align-items-center">
+                    <div class="col text-end">Tablet</div>
+                    <div class="col-auto">
+                      <ui-switch class="d-flex w-content" size="small"
+                                 (changeEvent)="allChanged($event,'Tablet')"></ui-switch>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col">
-                <div class="row align-items-center">
-                  <div class="col-3">Bayi</div>
-                  <div class="col">
-                    <ui-switch class="d-flex w-content" size="small"
-                               (changeEvent)="allChanged($event,'Bayi')"></ui-switch>
+              <div class="row mt-3">
+                <div class="col">
+                  <div class="row align-items-center">
+                    <div class="col-3">İnternet</div>
+                    <div class="col">
+                      <ui-switch class="d-flex w-content" size="small"
+                                 (changeEvent)="allChanged($event,'İnternet')"></ui-switch>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row align-items-center">
+                    <div class="col text-end">Web</div>
+                    <div class="col-auto">
+                      <ui-switch class="d-flex w-content" size="small"
+                                 (changeEvent)="allChanged($event,'Web')"></ui-switch>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col">
-                <div class="row align-items-center">
-                  <div class="col text-end">Şube</div>
-                  <div class="col-auto">
-                    <ui-switch class="d-flex w-content" size="small"
-                               (changeEvent)="allChanged($event,'Şube')"></ui-switch>
+              <div class="row mt-3">
+                <div class="col">
+                  <div class="row align-items-center">
+                    <div class="col-3">PTT</div>
+                    <div class="col">
+                      <ui-switch class="d-flex w-content" size="small"
+                                 (changeEvent)="allChanged($event,'PTT')"></ui-switch>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row align-items-center">
+                    <div class="col text-end">Web Bayi</div>
+                    <div class="col-auto">
+                      <ui-switch class="d-flex w-content" size="small"
+                                 (changeEvent)="allChanged($event,'Web Bayi')"></ui-switch>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col">
-                <div class="row align-items-center">
-                  <div class="col-3">Diğer</div>
-                  <div class="col">
-                    <ui-switch class="d-flex w-content" size="small"
-                               (changeEvent)="allChanged($event,'Diğer')"></ui-switch>
+              <div class="row mt-3">
+                <div class="col">
+                  <div class="row align-items-center">
+                    <div class="col-3">Remote</div>
+                    <div class="col">
+                      <ui-switch class="d-flex w-content" size="small"
+                                 (changeEvent)="allChanged($event,'Remote')"></ui-switch>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col">
-                <div class="row align-items-center">
-                  <div class="col text-end">Tablet</div>
-                  <div class="col-auto">
-                    <ui-switch class="d-flex w-content" size="small"
-                               (changeEvent)="allChanged($event,'Tablet')"></ui-switch>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col">
-                <div class="row align-items-center">
-                  <div class="col-3">İnternet</div>
-                  <div class="col">
-                    <ui-switch class="d-flex w-content" size="small"
-                               (changeEvent)="allChanged($event,'İnternet')"></ui-switch>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="row align-items-center">
-                  <div class="col text-end">Web</div>
-                  <div class="col-auto">
-                    <ui-switch class="d-flex w-content" size="small"
-                               (changeEvent)="allChanged($event,'Web')"></ui-switch>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col">
-                <div class="row align-items-center">
-                  <div class="col-3">PTT</div>
-                  <div class="col">
-                    <ui-switch class="d-flex w-content" size="small"
-                               (changeEvent)="allChanged($event,'PTT')"></ui-switch>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="row align-items-center">
-                  <div class="col text-end">Web Bayi</div>
-                  <div class="col-auto">
-                    <ui-switch class="d-flex w-content" size="small"
-                               (changeEvent)="allChanged($event,'Web Bayi')"></ui-switch>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row mt-3">
-              <div class="col">
-                <div class="row align-items-center">
-                  <div class="col-3">Remote</div>
-                  <div class="col">
-                    <ui-switch class="d-flex w-content" size="small"
-                               (changeEvent)="allChanged($event,'Remote')"></ui-switch>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="row align-items-center">
-                  <div class="col text-end">Web Mevduat</div>
-                  <div class="col-auto">
-                    <ui-switch class="d-flex w-content" size="small"
-                               (changeEvent)="allChanged($event,'Web Mevduat')"></ui-switch>
+                <div class="col">
+                  <div class="row align-items-center">
+                    <div class="col text-end">Web Mevduat</div>
+                    <div class="col-auto">
+                      <ui-switch class="d-flex w-content" size="small"
+                                 (changeEvent)="allChanged($event,'Web Mevduat')"></ui-switch>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -180,9 +188,11 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="d-flex justify-content-center mt-4">
-      <button class="btn btn-orange px-5" [routerLink]="['../finish']">Devam</button>
-    </div>
+      <div class="d-flex justify-content-center mt-4">
+        <button class="btn btn-orange px-5" type="button" [routerLink]="['../finish']" [hidden]="showForm">Kaydet
+        </button>
+        <button class="btn btn-orange px-5" type="button" [hidden]="!showForm" (click)="save()">Devam</button>
+      </div>
+    </form>
   </div>
 </app-main-content>

@@ -1,57 +1,60 @@
-import {Directive, HostListener, ElementRef, OnInit} from '@angular/core';
-import {TurkishLiraPipe} from '../pipes/turkish-lira.pipe';
+import {Directive, ElementRef, EventEmitter, HostBinding, HostListener, Input, Output} from '@angular/core';
+import {DecimalPipe} from "@angular/common";
 
-@Directive({selector: "[turkishLira]"})
-export class TurkishLiraDirective implements OnInit {
-  private el: any;
+@Directive({
+  selector: '[turkishLira]'
+})
+export class TurkishLiraDirective {
+  private navigationKeys = [
+    'Backspace',
+    'Delete',
+    'Tab',
+    'Escape',
+    'Enter',
+    'Home',
+    'End',
+    'ArrowLeft',
+    'ArrowRight',
+    'Clear',
+    'Copy',
+    'Paste'
+  ];
+  format = '0.2-2';
 
-  constructor(
-    private elementRef: ElementRef,
-    private formatCurrencyPipe: TurkishLiraPipe
-  ) {
-    this.el = this.elementRef.nativeElement;
+  @HostBinding('value')
+  stringValue: any;
+
+
+  @Output() appNumberInputChange: any = new EventEmitter();
+
+  constructor(private decimalPipe: DecimalPipe, private el: ElementRef) {
   }
 
   ngOnInit() {
-    this.el.value = this.formatCurrencyPipe.transform(this.el.value);
+    this.stringValue = this.decimalPipe.transform(this.el.nativeElement.value, this.format);
   }
-
-  @HostListener("focus", ["$event.target.value", "$event"])
-  onFocus(value: any, event: any) {
-    this.el.value = this.formatCurrencyPipe.parse(value);
-    if (event.which == 9) {
-      return false;
-    }
-    this.el.select();
-    return;
-  }
-
-  @HostListener("blur", ["$event.target.value"])
-  onBlur(value: any) {
-    this.el.value = this.formatCurrencyPipe.transform(value);
-  }
-
-  @HostListener('keydown', ['$event']) onKeyDown(event: any) {
-    let e = <KeyboardEvent>event;
-    if ([46, 8, 9, 27, 13, 110, 190].indexOf(e.keyCode) !== -1 ||
-      // Allow: Ctrl+A
-      (e.keyCode === 65 && (e.ctrlKey || e.metaKey)) ||
-      // Allow: Ctrl+C
-      (e.keyCode === 67 && (e.ctrlKey || e.metaKey)) ||
-      // Allow: Ctrl+V
-      (e.keyCode === 86 && (e.ctrlKey || e.metaKey)) ||
-      // Allow: Ctrl+X
-      (e.keyCode === 88 && (e.ctrlKey || e.metaKey)) ||
-      // Allow: home, end, left, right
-      (e.keyCode >= 35 && e.keyCode <= 39)) {
+  @HostListener('keydown', ['$event'])
+  onKeyDown(e: KeyboardEvent) {
+    if (
+      this.navigationKeys.indexOf(e.key) > -1 ||
+      (e.key === '.') || (e.key === ',')
+    ) {
       // let it happen, don't do anything
       return;
     }
     // Ensure that it is a number and stop the keypress
-    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+    if (
+      (e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) &&
+      (e.keyCode < 96 || e.keyCode > 105)
+    ) {
       e.preventDefault();
-
     }
   }
-
+  @HostListener('blur', ['$event.target.value'])
+  @HostListener('keyup.enter', ['$event.target.value'])
+  formatANumber(value: any) {
+    const numberValue = parseFloat(value.replace('.', '').replace(',', '.'));
+    this.stringValue = this.decimalPipe.transform(numberValue, this.format, 'tr-TR');
+    this.appNumberInputChange.next(numberValue);
+  }
 }
