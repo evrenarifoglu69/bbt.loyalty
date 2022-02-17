@@ -5,118 +5,212 @@
       <div class="box">
         <div class="p-4">
           <div class="row">
-            <div class="col-6 m-auto">
-              <div class="row">
-                <div class="col pl-20px">
-                  <div class="form-group">
-                    <div class="form-check">
-                      <input class="form-check-input scale-2x" type="checkbox" id="activePassive" name="activePassive"
-                             formControlName="activePassive">
-                      <label class="form-check-label ms-2" for="activePassive">
-                        Aktif / Pasif
-                      </label>
+            <div class="col-10 m-auto">
+              <div class="row align-items-end">
+                <div class="col">
+                  <div class="row">
+                    <div class="col pl-20px">
+                      <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input scale-2x" type="checkbox" id="activePassive"
+                                 name="activePassive"
+                                 formControlName="activePassive">
+                          <label class="form-check-label ms-2" for="activePassive">
+                            Aktif / Pasif
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input scale-2x" type="checkbox" id="combined" name="combined"
+                                 formControlName="combined" (change)="combinedChanged()">
+                          <label class="form-check-label ms-2" for="combined">
+                            Birleştirilebilir
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input scale-2x" type="checkbox" id="contract" name="contract"
+                                 formControlName="contract">
+                          <label class="form-check-label ms-2" for="contract">
+                            Sözleşme
+                          </label>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-group">
-                    <div class="form-check">
-                      <input class="form-check-input scale-2x" type="checkbox" id="combined" name="combined"
-                             formControlName="combined" (change)="combinedChanged()">
-                      <label class="form-check-label ms-2" for="combined">
-                        Birleştirilebilir
-                      </label>
-                    </div>
+                    <label for="contractId">Sözleşme ID</label>
+                    <input type="text" class="form-control" name="contractId" id="contractId" readonly
+                           formControlName="contractId">
                   </div>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <label for="campaignName">Kampanya Adı</label>
-                <input type="text" class="form-control" name="campaignName" id="campaignName"
-                       formControlName="campaignName"
-                       [ngClass]="{ 'is-invalid': submitted && f.campaignName.invalid }">
-                <div *ngIf="submitted && f.campaignName.errors" class="invalid-feedback">
-                  <div *ngIf="f.campaignName.errors.required">Kampanya Adı girilmelidir.</div>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <label for="campaignCode">Kampanya Kodu</label>
-                <input type="text" class="form-control" name="campaignCode" id="campaignCode" readonly
-                       formControlName="campaignCode">
-              </div>
-              <div class="form-group mt-3">
-                <label for="descriptionLanguage">Açıklama Dil Seçeneği</label>
-                <select name="descriptionLanguage" id="descriptionLanguage" class="form-select"
-                        formControlName="descriptionLanguage">
-                  <option value="">Seçiniz</option>
-                  <option value="TR">TR</option>
-                  <option value="EN">EN</option>
-                </select>
-              </div>
-              <div class="form-group mt-3">
-                <label for="description">Açıklama Detayı</label>
-                <input type="text" class="form-control" name="description" id="description"
-                       formControlName="description"
-                       [ngClass]="{ 'is-invalid': submitted && f.description.invalid }">
-                <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
-                  <div *ngIf="f.description.errors.required">Açıklama Detayı girilmelidir.</div>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <label for="titleLanguage">Başlık Dil Seçeneği</label>
-                <select name="titleLanguage" id="titleLanguage" class="form-select" formControlName="titleLanguage">
-                  <option value="">Seçiniz</option>
-                  <option value="TR">TR</option>
-                  <option value="EN">EN</option>
-                </select>
-              </div>
-              <div class="form-group mt-3">
-                <label for="title">Başlık</label>
-                <input type="text" class="form-control" name="title" id="title" formControlName="title"
-                       [ngClass]="{ 'is-invalid': submitted && f.title.invalid }">
-                <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
-                  <div *ngIf="f.title.errors.required">Başlık girilmelidir.</div>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <label for="campaignDetailLanguage">Kampanya Detayı Dil Seçeneği</label>
-                <select name="campaignDetailLanguage" id="campaignDetailLanguage" class="form-select"
-                        formControlName="campaignDetailLanguage">
-                  <option value="">Seçiniz</option>
-                  <option value="TR">TR</option>
-                  <option value="EN">EN</option>
-                </select>
-              </div>
-              <div class="form-group mt-3">
-                <label for="campaignDetail">Kampanya Detayı</label>
-                <input type="text" class="form-control" name="campaignDetail" id="campaignDetail"
-                       formControlName="campaignDetail"
-                       [ngClass]="{ 'is-invalid': submitted && f.campaignDetail.invalid }">
-                <div *ngIf="submitted && f.campaignDetail.errors" class="invalid-feedback">
-                  <div *ngIf="f.campaignDetail.errors.required">Kampanya Detayı girilmelidir.</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col">
                   <div class="form-group mt-3">
+                    <label for="campaignName">Kampanya Adı</label>
+                    <input type="text" class="form-control" name="campaignName" id="campaignName"
+                           formControlName="campaignName"
+                           [ngClass]="{ 'is-invalid': submitted && f.campaignName.invalid }">
+                    <div *ngIf="submitted && f.campaignName.errors" class="invalid-feedback">
+                      <div *ngIf="f.campaignName.errors.required">Kampanya Adı girilmelidir.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group mt-3">
+                    <label for="campaignCode">Kampanya Kodu</label>
+                    <input type="text" class="form-control" name="campaignCode" id="campaignCode" readonly
+                           formControlName="campaignCode">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <div class="form-group mt-3">
+                    <label for="descriptionTr">Açıklama (Türkçe)</label>
+                    <input type="text" class="form-control" name="descriptionTr" id="descriptionTr"
+                           formControlName="descriptionTr">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group mt-3">
+                    <label for="descriptionEn">Açıklama (İngilizce)</label>
+                    <input type="text" class="form-control" name="descriptionEn" id="descriptionEn"
+                           formControlName="descriptionEn">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group mt-3">
+                    <label for="titleTr">Başlık (Türkçe)</label>
+                    <input type="text" class="form-control" name="titleTr" id="titleTr"
+                           formControlName="titleTr">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group mt-3">
+                    <label for="titleEn">Başlık (İngilizce)</label>
+                    <input type="text" class="form-control" name="titleEn" id="titleEn"
+                           formControlName="titleEn">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group mt-3">
+                    <label for="campaignDetailTr">Kampanya Detayı (Türkçe)</label>
+                    <input type="text" class="form-control" name="campaignDetailTr" id="campaignDetailTr"
+                           formControlName="campaignDetailTr">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group mt-3">
+                    <label for="campaignDetailEn">Kampanya Detayı (İngilizce)</label>
+                    <input type="text" class="form-control" name="campaignDetailEn" id="campaignDetailEn"
+                           formControlName="campaignDetailEn">
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="htmlSummaryTr">HTML Özet (Türkçe)</label>
+                    <angular-editor formControlName="htmlSummaryTr" id="htmlSummaryTr"
+                                    placeholder="HTML Özet (Türkçe)"></angular-editor>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="htmlSummaryTr">HTML Özet (İngilizce)</label>
+                    <angular-editor formControlName="htmlSummaryEn" id="htmlSummaryEn"
+                                    placeholder="HTML Özet (İngilizce)"></angular-editor>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="htmlDescTr">HTML Açıklama (Türkçe)</label>
+                    <angular-editor formControlName="htmlDescTr" id="htmlDescTr"
+                                    placeholder="HTML Açıklama (Türkçe)"></angular-editor>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="htmlDescEn">HTML Açıklama (İngilizce)</label>
+                    <angular-editor formControlName="htmlDescEn" id="htmlDescEn"
+                                    placeholder="HTML Açıklama (İngilizce)"></angular-editor>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="htmlDetailTr">HTML Detay (Türkçe)</label>
+                    <angular-editor formControlName="htmlDetailTr" id="htmlDetailTr"
+                                    placeholder="HTML Detay (Türkçe)"></angular-editor>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="htmlDetailEn">HTML Detay (İngilizce)</label>
+                    <angular-editor formControlName="htmlDetailEn" id="htmlDetailEn"
+                                    placeholder="HTML Detay (İngilizce)"></angular-editor>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="form-group mt-3 position-relative">
                     <label for="startDate">Başlama Tarihi</label>
-                    <input type="text" class="form-control" name="startDate" id="startDate"
-                           formControlName="startDate"
-                           [ngClass]="{ 'is-invalid': submitted && f.startDate.invalid }">
+                    <input class="form-control" angular-mydatepicker
+                           name="startDate" id="startDate" formControlName="startDate" (click)="sDp.toggleCalendar()"
+                           [options]="dpOptions" #sDp="angular-mydatepicker" [locale]="locale"
+                           [ngClass]="{ 'is-invalid': submitted && f.startDate.invalid }"/>
                     <div *ngIf="submitted && f.startDate.errors" class="invalid-feedback">
                       <div *ngIf="f.startDate.errors.required">Başlama Tarihi seçilmelidir.</div>
                     </div>
                   </div>
                 </div>
                 <div class="col">
-                  <div class="form-group mt-3">
+                  <div class="form-group mt-3 position-relative">
                     <label for="endDate">Bitiş Tarihi</label>
-                    <input type="text" class="form-control" name="endDate" id="endDate"
-                           formControlName="endDate"
-                           [ngClass]="{ 'is-invalid': submitted && f.endDate.invalid }">
+                    <input class="form-control" angular-mydatepicker
+                           name="endDate" id="endDate" formControlName="endDate" (click)="eDp.toggleCalendar()"
+                           [options]="dpOptions" #eDp="angular-mydatepicker" [locale]="locale"
+                           [ngClass]="{ 'is-invalid': submitted && f.endDate.invalid }"/>
                     <div *ngIf="submitted && f.endDate.errors" class="invalid-feedback">
-                      <div *ngIf="f.endDate.errors.required">Bitiş Tarihi seçilmelidir.</div>
+                      <div *ngIf="f.endDate.errors.required">Başlama Tarihi seçilmelidir.</div>
                     </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group mt-3">
+                    <label for="order">Sıralama</label>
+                    <input type="text" class="form-control" name="order" id="order"
+                           [readonly]="formGroup.get('combined')?.value"
+                           formControlName="order"
+                           [ngClass]="{ 'is-invalid': submitted && f.order.invalid }">
+                    <div *ngIf="submitted && f.order.errors" class="invalid-feedback">
+                      <div *ngIf="f.order.errors.required">Sıralama girilmelidir.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group mt-3">
+                    <label for="maxUser">Max Kullanıcı</label>
+                    <input type="text" class="form-control" name="maxUser" id="maxUser" formControlName="maxUser">
                   </div>
                 </div>
               </div>
@@ -141,62 +235,52 @@
               <div class="row">
                 <div class="col">
                   <div class="form-group mt-3">
-                    <label for="order">Sıralama</label>
-                    <input type="text" class="form-control" name="order" id="order"
-                           [readonly]="formGroup.get('combined')?.value"
-                           formControlName="order"
-                           [ngClass]="{ 'is-invalid': submitted && f.order.invalid }">
-                    <div *ngIf="submitted && f.order.errors" class="invalid-feedback">
-                      <div *ngIf="f.order.errors.required">Sıralama girilmelidir.</div>
+                    <label for="sector">Sektör</label>
+                    <select name="sector" id="sector" class="form-select"
+                            formControlName="sector"
+                            [ngClass]="{ 'is-invalid': submitted && f.sector.invalid }">
+                      <option value="">Seçiniz</option>
+                      <option [value]="1">Akaryakıt</option>
+                      <option [value]="2">Giyim</option>
+                      <option [value]="3">Eğitim</option>
+                    </select>
+                    <div *ngIf="submitted && f.sector.errors" class="invalid-feedback">
+                      <div *ngIf="f.sector.errors.required">Sektör seçilmelidir.</div>
                     </div>
                   </div>
                 </div>
                 <div class="col">
                   <div class="form-group mt-3">
-                    <label for="maxUser">Max Kullanıcı</label>
-                    <input type="text" class="form-control" name="maxUser" id="maxUser" formControlName="maxUser">
+                    <label for="view">Görüntüleme</label>
+                    <select name="view" id="view" class="form-select"
+                            formControlName="view"
+                            [ngClass]="{ 'is-invalid': submitted && f.view.invalid }">
+                      <option value="">Seçiniz</option>
+                      <option [value]="1">Sürekli Kampanyalar</option>
+                      <option [value]="2">Dönemsel Kampanyalar</option>
+                      <option [value]="3">Görüntülenmeyecek</option>
+                    </select>
+                    <div *ngIf="submitted && f.view.errors" class="invalid-feedback">
+                      <div *ngIf="f.view.errors.required">Görüntüleme seçilmelidir.</div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="form-group mt-3">
-                <label for="sector">Sektör</label>
-                <select name="sector" id="sector" class="form-select"
-                        formControlName="sector"
-                        [ngClass]="{ 'is-invalid': submitted && f.sector.invalid }">
-                  <option value="">Seçiniz</option>
-                  <option [value]="1">Akaryakıt</option>
-                  <option [value]="2">Giyim</option>
-                  <option [value]="3">Eğitim</option>
-                </select>
-                <div *ngIf="submitted && f.sector.errors" class="invalid-feedback">
-                  <div *ngIf="f.sector.errors.required">Sektör seçilmelidir.</div>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <label for="view">Görüntüleme</label>
-                <select name="view" id="view" class="form-select"
-                        formControlName="view"
-                        [ngClass]="{ 'is-invalid': submitted && f.view.invalid }">
-                  <option value="">Seçiniz</option>
-                  <option [value]="1">Sürekli Kampanyalar</option>
-                  <option [value]="2">Dönemsel Kampanyalar</option>
-                  <option [value]="3">Görüntülenmeyecek</option>
-                </select>
-                <div *ngIf="submitted && f.view.errors" class="invalid-feedback">
-                  <div *ngIf="f.view.errors.required">Görüntüleme seçilmelidir.</div>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <label for="action">Aksiyon</label>
-                <select name="action" id="action" class="form-select"
-                        formControlName="action"
-                        [ngClass]="{ 'is-invalid': submitted && f.action.invalid }">
-                  <option value="">Seçiniz</option>
-                  <option [value]="1">Ödeme Cashback</option>
-                  <option [value]="2">Fatura Cashback</option>
-                </select>
-                <div *ngIf="submitted && f.action.errors" class="invalid-feedback">
-                  <div *ngIf="f.action.errors.required">Aksiyon seçilmelidir.</div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-group mt-3">
+                    <label for="action">Aksiyon</label>
+                    <select name="action" id="action" class="form-select"
+                            formControlName="action"
+                            [ngClass]="{ 'is-invalid': submitted && f.action.invalid }">
+                      <option value="">Seçiniz</option>
+                      <option [value]="1">Ödeme Cashback</option>
+                      <option [value]="2">Fatura Cashback</option>
+                    </select>
+                    <div *ngIf="submitted && f.action.errors" class="invalid-feedback">
+                      <div *ngIf="f.action.errors.required">Aksiyon seçilmelidir.</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

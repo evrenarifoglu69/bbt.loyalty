@@ -3,6 +3,7 @@ import {CampaignDefinitionService} from "../../services/campaign-definition.serv
 import {StepService} from "../../services/step.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
+import {IAngularMyDpOptions} from 'angular-mydatepicker';
 
 @Component({
   selector: 'app-campaign-definition',
@@ -13,6 +14,11 @@ export class CampaignDefinitionComponent implements OnInit {
   stepData;
   formGroup: FormGroup;
   submitted = false;
+  dpOptions: IAngularMyDpOptions = {
+    dateRange: false,
+    dateFormat: 'dd.mm.yyyy',
+  };
+  locale: string = 'tr';
 
   constructor(private fb: FormBuilder, private stepService: StepService, private campaignDefinitionService: CampaignDefinitionService, private router: Router, private route: ActivatedRoute) {
     this.stepService.setSteps(this.campaignDefinitionService.stepData);
@@ -21,16 +27,24 @@ export class CampaignDefinitionComponent implements OnInit {
     this.formGroup = this.fb.group({
       activePassive: '',
       combined: '',
+      contract: '',
+      contractId: '',
       campaignName: ['', Validators.required],
       campaignCode: '15162516521',
-      descriptionLanguage: '',
-      description: ['', Validators.required],
-      titleLanguage: '',
-      title: ['', Validators.required],
-      campaignDetailLanguage: '',
-      campaignDetail: ['', Validators.required],
-      startDate: ['', Validators.required],
-      endDate: ['', Validators.required],
+      descriptionTr: '',
+      descriptionEn: '',
+      titleTr: '',
+      titleEn: '',
+      campaignDetailTr: '',
+      campaignDetailEn: '',
+      htmlSummaryTr: '',
+      htmlSummaryEn: '',
+      htmlDescTr: '',
+      htmlDescEn: '',
+      htmlDetailTr: '',
+      htmlDetailEn: '',
+      startDate: [null, Validators.required],
+      endDate: [null, Validators.required],
       campaignListImage: ['', Validators.required],
       campaignDetailImage: ['', Validators.required],
       order: ['', Validators.required],

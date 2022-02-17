@@ -21,7 +21,7 @@ registerLocaleData(localeTR);
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'tr-TR'}],
+  providers: [{provide: LOCALE_ID, useValue: 'tr-TR'}],
   exports: [],
   bootstrap: [AppComponent]
 })
