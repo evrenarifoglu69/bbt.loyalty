@@ -28,7 +28,23 @@
               <div *ngIf="f.gainFrequency.errors.required">Kazanım Sıklığı seçilmelidir.</div>
             </div>
           </div>
-          <div class="form-group mt-3">
+          <div class="row mt-5 mb-4">
+            <div class="col pl-20px">
+              <div class="form-group">
+                <div class="form-check form-check-inline me-5">
+                  <input class="form-check-input scale-2x" type="radio" name="choice" formControlName="choice"
+                         id="choice1" [value]="1">
+                  <label class="form-check-label ms-2" for="choice1">Tutar</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input scale-2x" type="radio" name="choice" formControlName="choice"
+                         id="choice2" [value]="2">
+                  <label class="form-check-label ms-2" for="choice2">Oran</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group mt-3" *ngIf="formGroup.get('choice')?.value==1">
             <label for="currency">Para Birimi</label>
             <select name="currency" id="currency" class="form-select" formControlName="currency"
                     [ngClass]="{ 'is-invalid': submitted && f.currency.invalid }">
@@ -40,11 +56,12 @@
               <div *ngIf="f.currency.errors.required">Para Birimi seçilmelidir.</div>
             </div>
           </div>
-          <div class="form-group mt-3">
+          <div class="form-group mt-3" *ngIf="formGroup.get('choice')?.value==1">
             <label for="maxPrice">Çatı Max Tutar</label>
-            <input type="text" class="form-control" name="maxPrice" id="maxPrice" formControlName="maxPrice" turkishLira>
+            <input type="text" class="form-control" name="maxPrice" id="maxPrice" formControlName="maxPrice"
+                   turkishLira>
           </div>
-          <div class="form-group mt-3">
+          <div class="form-group mt-3" *ngIf="formGroup.get('choice')?.value==2">
             <label for="ratio">Çatı Oranı</label>
             <input type="text" class="form-control" name="ratio" id="ratio" onlyNumber>
           </div>

@@ -3,11 +3,17 @@
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 @import "~bootstrap/scss/mixins";
-
+@import "bootstrap-icons/font/bootstrap-icons";
 app-root {
   color: #464646;
+  .cursor-pointer{
+    cursor: pointer;
+  }
   .myDpSelector{
     top: 72px !important;
+  }
+  .form-control,.form-select{
+    line-height: 2;
   }
   .w-45px {
     width: 45px;

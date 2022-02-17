@@ -22,14 +22,23 @@
                   <div *ngIf="f.involvedType.errors.required">Dahil Olma Şekli seçilmelidir.</div>
                 </div>
               </div>
-              <div class="form-group mt-3">
-                <label for="identityNo">TCKN</label>
-                <input type="text" class="form-control" name="identityNo" id="identityNo" formControlName="identityNo"
-                       onlyNumber maxlength="11"
-                       [ngClass]="{ 'is-invalid': submitted && f.identityNo.invalid }">
-                <div *ngIf="submitted && f.identityNo.errors" class="invalid-feedback">
-                  <div *ngIf="f.identityNo.errors.required">TCKN girilmelidir.</div>
-                  <div *ngIf="f.identityNo.errors.minlength">TCKN 11 haneli olmalıdır.</div>
+              <div class="row  mt-3">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="identityNo">TCKN</label>
+                    <input type="text" class="form-control" name="identityNo" id="identityNo"
+                           formControlName="identityNo"
+                           onlyNumber maxlength="11" readonly
+                           [ngClass]="{ 'is-invalid': submitted && f.identityNo.invalid }">
+                    <div *ngIf="submitted && f.identityNo.errors" class="invalid-feedback">
+                      <div *ngIf="f.identityNo.errors.required">TCKN girilmelidir.</div>
+                      <div *ngIf="f.identityNo.errors.minlength">TCKN 11 haneli olmalıdır.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto d-flex align-items-end">
+                  <input type="file" accept="image/*" #file hidden (change)="fileSelected($event)">
+                  <button class="btn btn-secondary px-5" (click)="file.click()">Dosya Yükle</button>
                 </div>
               </div>
               <div class="form-group mt-3">
@@ -71,7 +80,8 @@
               </div>
               <div class="form-group mt-3">
                 <label for="campaignStartPeriod">Kampanya Başlama Dönemi</label>
-                <select name="campaignStartPeriod" id="campaignStartPeriod" class="form-select" formControlName="campaignStartPeriod"
+                <select name="campaignStartPeriod" id="campaignStartPeriod" class="form-select"
+                        formControlName="campaignStartPeriod"
                         [ngClass]="{ 'is-invalid': submitted && f.campaignStartPeriod.invalid }">
                   <option value="">Seçiniz</option>
                   <option [value]="1">Katılım Anında</option>

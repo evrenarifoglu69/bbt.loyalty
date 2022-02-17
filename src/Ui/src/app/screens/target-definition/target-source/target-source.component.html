@@ -3,7 +3,7 @@
   <div class="container">
     <form [formGroup]="formGroup">
       <div class="box p-4">
-        <div class="col-12 col-md-6 m-md-auto">
+        <div class="col-12 col-md-10 m-md-auto">
           <div class="form-group">
             <label for="source">Hedef Kaynağı</label>
             <select name="source" id="source" class="form-select" formControlName="source"
@@ -17,76 +17,204 @@
             </div>
           </div>
           <div class="stream-panel mt-3" *ngIf="formGroup.get('source')?.value==1">
-            <div class="form-group">
-              <label for="streamName">Akış İsmi</label>
-              <input type="text" class="form-control" name="streamName" id="streamName" formControlName="streamName"
-                     [ngClass]="{ 'is-invalid': submitted && f.streamName.invalid }">
-              <div *ngIf="submitted && f.streamName.errors" class="invalid-feedback">
-                <div *ngIf="f.streamName.errors.required">Akış İsmi girilmelidir.</div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="streamName">Hedef Gösterim Tipi</label>
+                  <input type="text" class="form-control" name="targetViewType" id="targetViewType" formControlName="targetViewType">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="streamName">Akış İsmi</label>
+                  <input type="text" class="form-control" name="streamName" id="streamName" formControlName="streamName"
+                         [ngClass]="{ 'is-invalid': submitted && f.streamName.invalid }">
+                  <div *ngIf="submitted && f.streamName.errors" class="invalid-feedback">
+                    <div *ngIf="f.streamName.errors.required">Akış İsmi girilmelidir.</div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="row mt-3">
               <div class="col">
                 <div class="form-group">
-                  <label for="totalPrice">Toplam Tutar</label>
-                  <input type="text" class="form-control" name="totalPrice" id="totalPrice" formControlName="totalPrice"
-                         turkishLira
-                         [ngClass]="{ 'is-invalid': submitted && f.totalPrice.invalid }">
-                  <div *ngIf="submitted && f.totalPrice.errors" class="invalid-feedback">
-                    <div *ngIf="f.totalPrice.errors.required">Toplam Tutar girilmelidir.</div>
+                  <label for="targetDetailTr">Hedef Detay (Türkçe)</label>
+                  <angular-editor formControlName="targetDetailTr" id="targetDetailTr"
+                                  placeholder="Hedef Detay (Türkçe)"></angular-editor>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="targetDetailEn">Hedef Detay (İngilizce)</label>
+                  <angular-editor formControlName="targetDetailEn" id="targetDetailEn"
+                                  placeholder="HTML Detay (İngilizce)"></angular-editor>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <div class="form-group">
+                  <label for="descriptionTr">Açıklama (Türkçe)</label>
+                  <angular-editor formControlName="descriptionTr" id="descriptionTr"
+                                  placeholder="Açıklama (Türkçe)"></angular-editor>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="descriptionEn">Açıklama (İngilizce)</label>
+                  <angular-editor formControlName="descriptionEn" id="descriptionEn"
+                                  placeholder="Açıklama (İngilizce)"></angular-editor>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="totalPrice">Toplam Tutar</label>
+                      <input type="text" class="form-control" name="totalPrice" id="totalPrice" formControlName="totalPrice"
+                             turkishLira
+                             [ngClass]="{ 'is-invalid': submitted && f.totalPrice.invalid }">
+                      <div *ngIf="submitted && f.totalPrice.errors" class="invalid-feedback">
+                        <div *ngIf="f.totalPrice.errors.required">Toplam Tutar girilmelidir.</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="processCount">İşlem Adedi</label>
+                      <input type="text" class="form-control" name="processCount" id="processCount"
+                             formControlName="processCount"
+                             [ngClass]="{ 'is-invalid': submitted && f.processCount.invalid }">
+                      <div *ngIf="submitted && f.processCount.errors" class="invalid-feedback">
+                        <div *ngIf="f.processCount.errors.required">İşlem Adedi girilmelidir.</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="form-group">
-                  <label for="processCount">İşlem Adedi</label>
-                  <input type="text" class="form-control" name="processCount" id="processCount"
-                         formControlName="processCount"
-                         [ngClass]="{ 'is-invalid': submitted && f.processCount.invalid }">
-                  <div *ngIf="submitted && f.processCount.errors" class="invalid-feedback">
-                    <div *ngIf="f.processCount.errors.required">İşlem Adedi girilmelidir.</div>
+                  <label for="streamFrequency">Akış Frekansı</label>
+                  <input type="text" class="form-control" name="streamFrequency" id="streamFrequency" formControlName="streamFrequency">
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <div class="form-group">
+                  <label for="streamAdditionalTime">Akış Ek Süresi</label>
+                  <input type="text" class="form-control" name="streamAdditionalTime" id="streamAdditionalTime" formControlName="streamAdditionalTime">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="triggerTime">Tetiklenme Zamanı</label>
+                  <select name="triggerTime" id="triggerTime" class="form-select" formControlName="triggerTime"
+                          [ngClass]="{ 'is-invalid': submitted && f.triggerTime.invalid }">
+                    <option value="">Seçiniz</option>
+                    <option [value]="1">Hedefe Ulaşıldığı Anda</option>
+                  </select>
+                  <div *ngIf="submitted && f.triggerTime.errors" class="invalid-feedback">
+                    <div *ngIf="f.triggerTime.errors.required">Tetiklenme Zamanı seçilmelidir.</div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="form-group mt-3">
-              <label for="triggerTime">Tetiklenme Zamanı</label>
-              <select name="triggerTime" id="triggerTime" class="form-select" formControlName="triggerTime"
-                      [ngClass]="{ 'is-invalid': submitted && f.triggerTime.invalid }">
-                <option value="">Seçiniz</option>
-                <option [value]="1">Hedefe Ulaşıldığı Anda</option>
-              </select>
-              <div *ngIf="submitted && f.triggerTime.errors" class="invalid-feedback">
-                <div *ngIf="f.triggerTime.errors.required">Tetiklenme Zamanı seçilmelidir.</div>
-              </div>
-            </div>
           </div>
           <div class="query-panel mt-3" *ngIf="formGroup.get('source')?.value==2">
-            <div class="form-group">
-              <label for="condition">Koşul</label>
-              <input type="text" class="form-control" name="condition" id="condition" formControlName="condition"
-                     [ngClass]="{ 'is-invalid': submitted && f.condition.invalid }">
-              <div *ngIf="submitted && f.condition.errors" class="invalid-feedback">
-                <div *ngIf="f.condition.errors.required">Koşul girilmelidir.</div>
+            <div class="row mt-3">
+              <div class="col">
+                <div class="form-group">
+                  <label for="queryTargetDetailTr">Hedef Detay (Türkçe)</label>
+                  <angular-editor formControlName="queryTargetDetailTr" id="queryTargetDetailTr"
+                                  placeholder="Hedef Detay (Türkçe)"></angular-editor>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="queryTargetDetailEn">Hedef Detay (İngilizce)</label>
+                  <angular-editor formControlName="queryTargetDetailEn" id="queryTargetDetailEn"
+                                  placeholder="HTML Detay (İngilizce)"></angular-editor>
+                </div>
               </div>
             </div>
-            <div class="form-group mt-3">
-              <label for="query">Sorgu</label>
-              <textarea name="query" id="query" class="form-control" rows="5" formControlName="query"
-                        [ngClass]="{ 'is-invalid': submitted && f.query.invalid }"></textarea>
-              <div *ngIf="submitted && f.query.errors" class="invalid-feedback">
-                <div *ngIf="f.query.errors.required">Sorgu girilmelidir.</div>
+            <div class="row mt-3">
+              <div class="col">
+                <div class="form-group">
+                  <label for="queryDescriptionTr">Açıklama (Türkçe)</label>
+                  <angular-editor formControlName="queryDescriptionTr" id="queryDescriptionTr"
+                                  placeholder="Açıklama (Türkçe)"></angular-editor>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="queryDescriptionEn">Açıklama (İngilizce)</label>
+                  <angular-editor formControlName="queryDescriptionEn" id="queryDescriptionEn"
+                                  placeholder="Açıklama (İngilizce)"></angular-editor>
+                </div>
               </div>
             </div>
-            <div class="form-group mt-3">
-              <label for="verificationTime">Kampanya Doğrulama Zamanı</label>
-              <select name="verificationTime" id="verificationTime" class="form-select" formControlName="verificationTime"
-                      [ngClass]="{ 'is-invalid': submitted && f.verificationTime.invalid }">
-                <option value="">Seçiniz</option>
-                <option [value]="1">İlk Kontrol Edildiğinde</option>
-              </select>
-              <div *ngIf="submitted && f.verificationTime.errors" class="invalid-feedback">
-                <div *ngIf="f.verificationTime.errors.required">Kampanya Doğrulama Zamanı seçilmelidir.</div>
+            <div class="row mt-3">
+              <div class="col">
+                <div class="form-group">
+                  <label for="queryTargetViewType">Hedef Gösterim Tipi</label>
+                  <select class="form-select" name="queryTargetViewType" id="queryTargetViewType" formControlName="queryTargetViewType">
+                    <option value="">Seçiniz</option>
+                    <option [value]="1">Progress Bar</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="condition">Koşul</label>
+                  <input type="text" class="form-control" name="condition" id="condition" formControlName="condition"
+                         [ngClass]="{ 'is-invalid': submitted && f.condition.invalid }">
+                  <div *ngIf="submitted && f.condition.errors" class="invalid-feedback">
+                    <div *ngIf="f.condition.errors.required">Koşul girilmelidir.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <div class="form-group">
+                  <label for="query">Sorgu</label>
+                  <input type="text" name="query" id="query" class="form-control" formControlName="query"
+                            [ngClass]="{ 'is-invalid': submitted && f.query.invalid }"/>
+                  <div *ngIf="submitted && f.query.errors" class="invalid-feedback">
+                    <div *ngIf="f.query.errors.required">Sorgu girilmelidir.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="queryStreamFrequency">Akış Frekansı</label>
+                  <input type="text" class="form-control" name="queryStreamFrequency" id="queryStreamFrequency" formControlName="queryStreamFrequency">
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <div class="form-group">
+                  <label for="queryStreamAdditionalTime">Akış Ek Süresi</label>
+                  <input type="text" class="form-control" name="queryStreamAdditionalTime" id="queryStreamAdditionalTime" formControlName="queryStreamAdditionalTime">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label for="verificationTime">Kampanya Doğrulama Zamanı</label>
+                  <select name="verificationTime" id="verificationTime" class="form-select"
+                          formControlName="verificationTime"
+                          [ngClass]="{ 'is-invalid': submitted && f.verificationTime.invalid }">
+                    <option value="">Seçiniz</option>
+                    <option [value]="1">İlk Kontrol Edildiğinde</option>
+                  </select>
+                  <div *ngIf="submitted && f.verificationTime.errors" class="invalid-feedback">
+                    <div *ngIf="f.verificationTime.errors.required">Kampanya Doğrulama Zamanı seçilmelidir.</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

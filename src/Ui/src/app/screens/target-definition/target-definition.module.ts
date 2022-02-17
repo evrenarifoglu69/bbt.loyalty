@@ -6,6 +6,8 @@ import {RouterModule, Routes} from "@angular/router";
 import {TargetSourceComponent} from './target-source/target-source.component';
 import {TargetFinishComponent} from './target-finish/target-finish.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {AngularEditorModule} from "@kolkov/angular-editor";
+import {HttpClientModule} from "@angular/common/http";
 
 const routes: Routes = [
   {path: '', component: TargetDefinitionComponent},
@@ -23,7 +25,9 @@ const routes: Routes = [
     CommonModule,
     SharedModule,
     RouterModule.forChild(routes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    AngularEditorModule
   ]
 })
 export class TargetDefinitionModule {

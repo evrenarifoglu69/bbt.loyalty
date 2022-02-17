@@ -10,6 +10,7 @@ import {CampaignFinishComponent} from './campaign-finish/campaign-finish.compone
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from '@angular/common/http';
 import {AngularEditorModule} from '@kolkov/angular-editor';
+import {NgxSmartModalModule} from "ngx-smart-modal";
 import { AngularMyDatePickerModule } from 'angular-mydatepicker';
 const routes: Routes = [
   {path: '', component: CampaignDefinitionComponent},
@@ -34,7 +35,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     AngularEditorModule,
-    AngularMyDatePickerModule
+    NgxSmartModalModule.forRoot(),
+    AngularMyDatePickerModule,
   ]
 })
 export class CampaignDefinitionModule {

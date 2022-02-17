@@ -72,4 +72,18 @@ export class CampaignRulesComponent implements OnInit {
       this.router.navigate(['../target-selection'], {relativeTo: this.route});
     }
   }
+
+  fileSelected(e: Event) {
+    const element = e.currentTarget as HTMLInputElement;
+    let fileList: FileList | null = element.files;
+    if (fileList!.length > 0) {
+      this.formGroup.patchValue({
+        identityNo: fileList && fileList[0].name
+      });
+    } else {
+      this.formGroup.patchValue({
+        identityNo: ''
+      });
+    }
+  }
 }

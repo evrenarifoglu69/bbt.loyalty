@@ -25,6 +25,7 @@ export class CampaignLimitsComponent implements OnInit {
     this.formGroup = this.fb.group({
       campaignName: ['', Validators.required],
       gainFrequency: ['', Validators.required],
+      choice: 1,
       currency: ['', Validators.required],
       maxPrice: ''
     });
