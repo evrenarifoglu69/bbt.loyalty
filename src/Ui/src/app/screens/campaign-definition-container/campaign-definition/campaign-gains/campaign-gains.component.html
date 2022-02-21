@@ -1,5 +1,5 @@
 <app-main-content>
-  <app-step [data]="stepData"></app-step>
+  <app-step [data]="stepData" [id]="id"></app-step>
   <div class="container">
     <form [formGroup]="formGroup">
       <ngx-smart-modal #modal identifier="modal">
@@ -57,6 +57,8 @@
       </ngx-smart-modal>
     </form>
     <div class="box">
+      <app-repost *ngIf="id" [id]="id">
+      </app-repost>
       <div class="p-4">
         <div class="col-6 m-auto">
           <div class="row">
@@ -74,8 +76,10 @@
                   <div class="col-3">Tümü</div>
                   <div class="col-auto d-flex align-items-center">
                     <ui-switch class="d-flex w-content me-2" size="small"
-                               (valueChange)="changed($event,'Tümü')" [(ngModel)]="switchFormGroup.all"></ui-switch>
-                    <i class="bi bi-pencil-fill cursor-pointer" *ngIf="switchFormGroup.all" (click)="modal.open()"></i>
+                               (valueChange)="changed($event,'Tümü')" [(ngModel)]="switchFormGroup.all"
+                               [disabled]="disabled==true"></ui-switch>
+                    <i class="bi bi-pencil-fill" [ngClass]="{'cursor-pointer':!disabled}" *ngIf="switchFormGroup.all"
+                       (click)="!disabled?modal.open():null"></i>
                   </div>
                 </div>
               </div>
@@ -88,9 +92,9 @@
                   <div class="col-3">Batch</div>
                   <div class="col d-flex align-items-center">
                     <ui-switch class="d-flex w-content me-2" size="small"
-                               (valueChange)="changed($event,'Batch')" [(ngModel)]="switchFormGroup.batch"></ui-switch>
-                    <i class="bi bi-pencil-fill cursor-pointer" *ngIf="switchFormGroup.batch"
-                       (click)="modal.open()"></i>
+                               (valueChange)="changed($event,'Batch')" [(ngModel)]="switchFormGroup.batch" [disabled]="disabled==true"></ui-switch>
+                    <i class="bi bi-pencil-fill " [ngClass]="{'cursor-pointer':!disabled}" *ngIf="switchFormGroup.batch"
+                       (click)="!disabled?modal.open():null"></i>
                   </div>
                 </div>
               </div>
@@ -99,9 +103,9 @@
                   <div class="col text-end">Sms</div>
                   <div class="col-auto d-flex align-items-center">
                     <ui-switch class="d-flex w-content" size="small"
-                               (valueChange)="changed($event,'Sms')" [(ngModel)]="switchFormGroup.sms"></ui-switch>
+                               (valueChange)="changed($event,'Sms')" [(ngModel)]="switchFormGroup.sms" [disabled]="disabled==true"></ui-switch>
                     <i class="bi bi-pencil-fill cursor-pointer ms-2" *ngIf="switchFormGroup.sms"
-                       (click)="modal.open()"></i>
+                       (click)="!disabled?modal.open():null"></i>
                   </div>
                 </div>
               </div>
@@ -112,9 +116,10 @@
                   <div class="col-3">Bayi</div>
                   <div class="col d-flex align-items-center">
                     <ui-switch class="d-flex w-content me-2" size="small"
-                               (valueChange)="changed($event,'Bayi')" [(ngModel)]="switchFormGroup.dealer"></ui-switch>
-                    <i class="bi bi-pencil-fill cursor-pointer" *ngIf="switchFormGroup.dealer"
-                       (click)="modal.open()"></i>
+                               (valueChange)="changed($event,'Bayi')" [(ngModel)]="switchFormGroup.dealer" [disabled]="disabled==true"></ui-switch>
+                    <i class="bi bi-pencil-fill " [ngClass]="{'cursor-pointer':!disabled}"
+                       *ngIf="switchFormGroup.dealer"
+                       (click)="!disabled?modal.open():null"></i>
                   </div>
                 </div>
               </div>
@@ -123,9 +128,9 @@
                   <div class="col text-end">Şube</div>
                   <div class="col-auto d-flex align-items-center">
                     <ui-switch class="d-flex w-content" size="small"
-                               (valueChange)="changed($event,'Şube')" [(ngModel)]="switchFormGroup.branch"></ui-switch>
+                               (valueChange)="changed($event,'Şube')" [(ngModel)]="switchFormGroup.branch" [disabled]="disabled==true"></ui-switch>
                     <i class="bi bi-pencil-fill cursor-pointer ms-2" *ngIf="switchFormGroup.branch"
-                       (click)="modal.open()"></i>
+                       (click)="!disabled?modal.open():null"></i>
                   </div>
                 </div>
               </div>
@@ -136,9 +141,9 @@
                   <div class="col-3">Diğer</div>
                   <div class="col d-flex align-items-center">
                     <ui-switch class="d-flex w-content me-2" size="small"
-                               (valueChange)="changed($event,'Diğer')" [(ngModel)]="switchFormGroup.other"></ui-switch>
-                    <i class="bi bi-pencil-fill cursor-pointer" *ngIf="switchFormGroup.other"
-                       (click)="modal.open()"></i>
+                               (valueChange)="changed($event,'Diğer')" [(ngModel)]="switchFormGroup.other" [disabled]="disabled==true"></ui-switch>
+                    <i class="bi bi-pencil-fill " [ngClass]="{'cursor-pointer':!disabled}" *ngIf="switchFormGroup.other"
+                       (click)="!disabled?modal.open():null"></i>
                   </div>
                 </div>
               </div>
@@ -148,9 +153,9 @@
                   <div class="col-auto d-flex align-items-center">
                     <ui-switch class="d-flex w-content" size="small"
                                (valueChange)="changed($event,'Tablet')"
-                               [(ngModel)]="switchFormGroup.tablet"></ui-switch>
+                               [(ngModel)]="switchFormGroup.tablet" [disabled]="disabled==true"></ui-switch>
                     <i class="bi bi-pencil-fill cursor-pointer ms-2" *ngIf="switchFormGroup.tablet"
-                       (click)="modal.open()"></i>
+                       (click)="!disabled?modal.open():null"></i>
                   </div>
                 </div>
               </div>
@@ -162,9 +167,10 @@
                   <div class="col d-flex align-items-center">
                     <ui-switch class="d-flex w-content me-2" size="small"
                                (valueChange)="changed($event,'İnternet')"
-                               [(ngModel)]="switchFormGroup.internet"></ui-switch>
-                    <i class="bi bi-pencil-fill cursor-pointer" *ngIf="switchFormGroup.internet"
-                       (click)="modal.open()"></i>
+                               [(ngModel)]="switchFormGroup.internet" [disabled]="disabled==true"></ui-switch>
+                    <i class="bi bi-pencil-fill " [ngClass]="{'cursor-pointer':!disabled}"
+                       *ngIf="switchFormGroup.internet"
+                       (click)="!disabled?modal.open():null"></i>
                   </div>
                 </div>
               </div>
@@ -173,9 +179,9 @@
                   <div class="col text-end">Web</div>
                   <div class="col-auto d-flex align-items-center">
                     <ui-switch class="d-flex w-content" size="small"
-                               (valueChange)="changed($event,'Web')" [(ngModel)]="switchFormGroup.web"></ui-switch>
+                               (valueChange)="changed($event,'Web')" [(ngModel)]="switchFormGroup.web" [disabled]="disabled==true"></ui-switch>
                     <i class="bi bi-pencil-fill cursor-pointer ms-2" *ngIf="switchFormGroup.web"
-                       (click)="modal.open()"></i>
+                       (click)="!disabled?modal.open():null"></i>
                   </div>
                 </div>
               </div>
@@ -186,8 +192,9 @@
                   <div class="col-3">PTT</div>
                   <div class="col d-flex align-items-center">
                     <ui-switch class="d-flex w-content me-2" size="small"
-                               (valueChange)="changed($event,'PTT')" [(ngModel)]="switchFormGroup.ptt"></ui-switch>
-                    <i class="bi bi-pencil-fill cursor-pointer" *ngIf="switchFormGroup.ptt" (click)="modal.open()"></i>
+                               (valueChange)="changed($event,'PTT')" [(ngModel)]="switchFormGroup.ptt" [disabled]="disabled==true"></ui-switch>
+                    <i class="bi bi-pencil-fill " [ngClass]="{'cursor-pointer':!disabled}" *ngIf="switchFormGroup.ptt"
+                       (click)="!disabled?modal.open():null"></i>
                   </div>
                 </div>
               </div>
@@ -197,9 +204,9 @@
                   <div class="col-auto d-flex align-items-center">
                     <ui-switch class="d-flex w-content" size="small"
                                (valueChange)="changed($event,'Web Bayi')"
-                               [(ngModel)]="switchFormGroup.webDealer"></ui-switch>
+                               [(ngModel)]="switchFormGroup.webDealer" [disabled]="disabled==true"></ui-switch>
                     <i class="bi bi-pencil-fill cursor-pointer ms-2" *ngIf="switchFormGroup.webDealer"
-                       (click)="modal.open()"></i>
+                       (click)="!disabled?modal.open():null"></i>
                   </div>
                 </div>
               </div>
@@ -211,9 +218,10 @@
                   <div class="col d-flex align-items-center">
                     <ui-switch class="d-flex w-content me-2" size="small"
                                (valueChange)="changed($event,'Remote')"
-                               [(ngModel)]="switchFormGroup.remote"></ui-switch>
-                    <i class="bi bi-pencil-fill cursor-pointer" *ngIf="switchFormGroup.remote"
-                       (click)="modal.open()"></i>
+                               [(ngModel)]="switchFormGroup.remote" [disabled]="disabled==true"></ui-switch>
+                    <i class="bi bi-pencil-fill " [ngClass]="{'cursor-pointer':!disabled}"
+                       *ngIf="switchFormGroup.remote"
+                       (click)="!disabled?modal.open():null"></i>
                   </div>
                 </div>
               </div>
@@ -223,9 +231,9 @@
                   <div class="col-auto d-flex align-items-center">
                     <ui-switch class="d-flex w-content" size="small"
                                (valueChange)="changed($event,'Web Mevduat')"
-                               [(ngModel)]="switchFormGroup.webDeposit"></ui-switch>
+                               [(ngModel)]="switchFormGroup.webDeposit" [disabled]="disabled==true"></ui-switch>
                     <i class="bi bi-pencil-fill cursor-pointer ms-2" *ngIf="switchFormGroup.webDeposit"
-                       (click)="modal.open()"></i>
+                       (click)="!disabled?modal.open():null"></i>
                   </div>
                 </div>
               </div>
@@ -234,9 +242,9 @@
         </div>
       </div>
     </div>
-    <div class="d-flex justify-content-center flex-column align-items-center mt-4">
+    <div class="d-flex justify-content-center flex-column align-items-center mt-4" *ngIf="!disabled">
       <a href="#" class="btn-link my-4">PDF Görüntüle</a>
-      <button class="btn btn-orange px-5" type="button" [routerLink]="['../finish']">Kaydet
+      <button class="btn btn-orange px-5" type="button" (click)="continue()">Kaydet
       </button>
     </div>
   </div>

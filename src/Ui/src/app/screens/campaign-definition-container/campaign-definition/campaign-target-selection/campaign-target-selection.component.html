@@ -1,23 +1,25 @@
 <app-main-content>
-  <app-step [data]="stepData"></app-step>
+  <app-step [data]="stepData" [id]="id"></app-step>
   <div class="container">
     <div class="box">
+      <app-repost *ngIf="id" [id]="id">
+      </app-repost>
       <div class="p-4">
         <div class="col-10 m-auto">
           <div class="table table-borderless table-responsive w-100 d-block d-md-table align-middle">
             <tbody>
             <tr>
               <td>
-                <button class="btn btn-primary px-5 w-100">Yeni Ekle</button>
+                <button class="btn btn-primary px-5 w-100" [disabled]="disabled">Yeni Ekle</button>
               </td>
               <td>
                 <img src="/assets/img/conjunction.png">
               </td>
               <td>
-                <button class="btn btn-outline-primary px-5 w-100">Bağlaç</button>
+                <button class="btn btn-outline-primary px-5 w-100" [disabled]="disabled">Bağlaç</button>
               </td>
               <td colspan="2">
-                <button class="btn btn-outline-primary px-5 w-100">Hedef Tanım İsmi</button>
+                <button class="btn btn-outline-primary px-5 w-100" [disabled]="disabled">Hedef Tanım İsmi</button>
               </td>
             </tr>
             <tr>
@@ -29,10 +31,10 @@
               <td></td>
               <td>
                 <img src="/assets/img/cross.png" class="me-2">
-                <input class="form-check-input  ms-2 scale-1-5x" type="checkbox" value="">
+                <input class="form-check-input  ms-2 scale-1-5x" type="checkbox" value="" [disabled]="disabled">
               </td>
               <td>
-                <select class="form-select">
+                <select class="form-select" [disabled]="disabled">
                   <option value="">ve</option>
                 </select>
               </td>
@@ -40,22 +42,22 @@
                 <img src="/assets/img/conjunction-big.png">
               </td>
               <td>
-                <input type="text" class="form-control" value="Debit Kart ile Toplam 1000 TL İşlem">
+                <input type="text" class="form-control" value="Debit Kart ile Toplam 1000 TL İşlem" [disabled]="disabled">
               </td>
             </tr>
             <tr>
               <td></td>
               <td>
                 <img src="/assets/img/cross.png" class="me-2">
-                <input class="form-check-input  ms-2 scale-1-5x" type="checkbox" value="">
+                <input class="form-check-input  ms-2 scale-1-5x" type="checkbox" value="" [disabled]="disabled">
               </td>
               <td>
-                <select class="form-select">
+                <select class="form-select" [disabled]="disabled">
                   <option value="">ve</option>
                 </select>
               </td>
               <td>
-                <input type="text" class="form-control" value="Debit Kart ile Toplam 1000 TL İşlem">
+                <input type="text" class="form-control" value="Debit Kart ile Toplam 1000 TL İşlem" [disabled]="disabled">
               </td>
             </tr>
             </tbody>
@@ -63,8 +65,8 @@
         </div>
       </div>
     </div>
-    <div class="d-flex justify-content-center mt-4">
-      <button class="btn btn-orange px-5" [routerLink]="['../gains']">Devam</button>
+    <div class="d-flex justify-content-center mt-4" *ngIf="!disabled">
+      <button class="btn btn-orange px-5" (click)="continue()">Devam</button>
     </div>
   </div>
 </app-main-content>

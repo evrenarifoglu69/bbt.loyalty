@@ -16,10 +16,15 @@ import {RepostComponent} from "../../../components/repost/repost.component";
 
 const routes: Routes = [
   {path: 'definition', component: CampaignDefinitionComponent},
+  {path: 'definition/:detailId', component: CampaignDefinitionComponent},
   {path: 'rules', component: CampaignRulesComponent},
+  {path: 'rules/:detailId', component: CampaignRulesComponent},
   {path: 'target-selection', component: CampaignTargetSelectionComponent},
+  {path: 'target-selection/:detailId', component: CampaignTargetSelectionComponent},
   {path: 'gains', component: CampaignGainsComponent},
+  {path: 'gains/:detailId', component: CampaignGainsComponent},
   {path: 'finish', component: CampaignFinishComponent},
+  {path: 'finish/:detailId', component: CampaignFinishComponent},
 ]
 
 @NgModule({

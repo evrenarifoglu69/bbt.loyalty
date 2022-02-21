@@ -5,6 +5,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {IAngularMyDpOptions} from 'angular-mydatepicker';
 import {AngularEditorConfig} from "@kolkov/angular-editor";
+import {GlobalVariable} from "../../../global";
 
 @Component({
   selector: 'app-campaign-definition',
@@ -21,6 +22,7 @@ export class CampaignDefinitionComponent implements OnInit {
   };
   locale: string = 'tr';
   id: any;
+  detailId: any;
   repost: boolean = false;
   disabled: boolean = false;
   editorConfig: AngularEditorConfig = {
@@ -30,6 +32,7 @@ export class CampaignDefinitionComponent implements OnInit {
   constructor(private fb: FormBuilder, private stepService: StepService, private campaignDefinitionService: CampaignDefinitionService, private router: Router, private route: ActivatedRoute) {
     this.route.paramMap.subscribe(paramMap => {
       this.id = paramMap.get('id');
+      this.detailId = paramMap.get('detailId');
       if (paramMap.get('repost')) {
         this.repost = paramMap.get('repost') === 'true';
       }
@@ -69,38 +72,45 @@ export class CampaignDefinitionComponent implements OnInit {
     });
     if (this.id) {
       this.stepService.finish();
-      this.formGroup.patchValue({
-        activePassive: true,
-        combined: false,
-        contract: false,
-        contractId: '',
-        campaignName: 'Kampanya 1',
-        campaignCode: '15162516521',
-        titleTr: 'Kampanya Başlık',
-        titleEn: 'Kampanya Başlık',
-        descriptionTr: 'Kampanya Açıklama',
-        descriptionEn: 'Kampanya Açıklama',
-        summaryTr: 'Lorem Ipsum',
-        summaryEn: 'Lorem Ipsum',
-        descTr: 'Lorem Ipsum',
-        descEn: 'Lorem Ipsum',
-        detailTr: 'Lorem Ipsum',
-        detailEn: 'Lorem Ipsum',
-        startDate: {isRange: false, singleDate: {jsDate: new Date('01.01.2022')}},
-        endDate: {isRange: false, singleDate: {jsDate: new Date('01.03.2022')}},
-        campaignListImage: '',
-        campaignDetailImage: '',
-        order: '',
-        maxUser: '1000',
-        programType: 1,
-        sector: 1,
-        view: 1,
-        action: 1
-      })
+      this.populateForm();
+    }
+    if (this.detailId) {
+      this.populateForm();
     }
   }
 
   ngOnInit(): void {
+  }
+
+  populateForm() {
+    this.formGroup.patchValue({
+      activePassive: true,
+      combined: false,
+      contract: false,
+      contractId: '',
+      campaignName: 'Kampanya 1',
+      campaignCode: '15162516521',
+      titleTr: 'Kampanya Başlık',
+      titleEn: 'Kampanya Başlık',
+      descriptionTr: 'Kampanya Açıklama',
+      descriptionEn: 'Kampanya Açıklama',
+      summaryTr: 'Lorem Ipsum',
+      summaryEn: 'Lorem Ipsum',
+      descTr: 'Lorem Ipsum',
+      descEn: 'Lorem Ipsum',
+      detailTr: 'Lorem Ipsum',
+      detailEn: 'Lorem Ipsum',
+      startDate: {isRange: false, singleDate: {jsDate: new Date('01.01.2022')}},
+      endDate: {isRange: false, singleDate: {jsDate: new Date('01.03.2022')}},
+      campaignListImage: '',
+      campaignDetailImage: '',
+      order: '',
+      maxUser: '1000',
+      programType: 1,
+      sector: 1,
+      view: 1,
+      action: 1
+    })
   }
 
   get f() {
@@ -120,7 +130,8 @@ export class CampaignDefinitionComponent implements OnInit {
   continue() {
     this.submitted = true;
     if (this.formGroup.valid) {
-      this.router.navigate(['./rules'], {relativeTo: this.route});
+      this.detailId = this.detailId ? this.detailId : 1;
+      this.router.navigate([GlobalVariable.rules, this.detailId], {relativeTo: this.route});
     }
   }
 }
