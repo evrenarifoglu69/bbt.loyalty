@@ -4,17 +4,30 @@
 @import '~bootstrap/scss/variables';
 @import "~bootstrap/scss/mixins";
 @import "bootstrap-icons/font/bootstrap-icons";
+
 app-root {
   color: #464646;
-  .cursor-pointer{
+
+  .angular-editor-textarea.disabled {
+    background-color: #e9ecef !important;
+  }
+
+  .bg-primary {
+    background-color: #a2e4ff !important;
+  }
+
+  .cursor-pointer {
     cursor: pointer;
   }
-  .myDpSelector{
+
+  .myDpSelector {
     top: 72px !important;
   }
-  .form-control,.form-select{
+
+  .form-control:not(.form-control-sm), .form-select:not(.form-select-sm) {
     line-height: 2;
   }
+
   .w-45px {
     width: 45px;
   }
@@ -49,7 +62,7 @@ app-root {
 
     .sign-out {
       position: absolute;
-      right: 0;
+      right: var(--bs-gutter-x, .75rem);
     }
 
     ul {
@@ -136,6 +149,10 @@ app-root {
 
   .c-pointer {
     cursor: pointer;
+  }
+
+  .pl-32px {
+    padding-left: 32px;
   }
 
   .pl-5px {
@@ -249,6 +266,16 @@ app-root {
     white-space: nowrap;
   }
 
+  .table > :not(:first-child) {
+    border-top: 2px solid #efefef;
+  }
+
+  .table-primary {
+    background: #0099d7;
+    --bs-table-bg: #0099d7;
+    color: #fff;
+  }
+
   .circle {
     width: 40px;
     height: 40px;
@@ -296,12 +323,16 @@ app-root {
 
   .btn {
     border-radius: 20px;
-    padding: 10px 0.75rem
+
+    &:not(.btn-sm) {
+      padding: 10px 0.75rem
+    }
   }
 
   .btn-primary {
     background: #0099d7;
     border-color: #0099d7;
+    color: #fff !important;
 
     &:hover, &:focus {
       background: #0099d7;
@@ -423,14 +454,16 @@ app-root {
     position: relative;
     top: -100px;
 
-    & > .row {
-      margin-bottom: 40px;
+    & > div {
+      & > .row {
+        margin-bottom: 40px;
 
-      & > [class*=col] > .title {
-        font-size: 32px;
-        line-height: 32px;
-        font-weight: 500;
-        margin-bottom: 10px;
+        & > [class*=col] > .title {
+          font-size: 32px;
+          line-height: 32px;
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
       }
     }
 
@@ -522,8 +555,9 @@ app-root {
         bottom: 0;
         right: 0;
       }
-      &.finished{
-        &:after{
+
+      &.finished {
+        &:after {
           content: '';
           width: 50%;
           height: 1px;

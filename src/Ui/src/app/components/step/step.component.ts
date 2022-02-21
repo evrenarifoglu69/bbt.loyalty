@@ -8,6 +8,7 @@ import {StepService} from "../../services/step.service";
 })
 export class StepComponent implements OnInit {
   @Input('data') data: any;
+  @Input('id') id: any;
   isFinished;
 
   constructor(private stepService: StepService) {

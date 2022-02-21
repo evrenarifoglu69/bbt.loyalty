@@ -1,0 +1,105 @@
+<app-main-content blockTitle="Kampanya Tanımı">
+  <div right>
+    <a [routerLink]="['../create/definition']" class="btn btn-white px-5 float-end">Yeni Kampanya</a>
+  </div>
+  <div class="container">
+    <div class="box">
+      <div class="p-4">
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Kampanya Adı</label>
+              <input type="text" class="form-control form-control-sm">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label>Kampanya Kodu</label>
+              <input type="text" class="form-control form-control-sm">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label>Sözleşme ID</label>
+              <input type="text" class="form-control form-control-sm">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label>Başlama Tarihi</label>
+              <input type="text" class="form-control form-control-sm">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label>Bitiş Tarihi</label>
+              <input type="text" class="form-control form-control-sm">
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <div class="form-check form-group pl-32px">
+              <input class="form-check-input scale-2x" type="checkbox" id="activePassive">
+              <label class="form-check-label ms-2" for="activePassive">
+                Aktif / Pasif
+              </label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-check form-group pl-32px">
+              <input class="form-check-input scale-2x" type="checkbox" id="combined">
+              <label class="form-check-label ms-2" for="combined">
+                Birleştirilebilir
+              </label>
+            </div>
+          </div>
+          <div class="col"></div>
+          <div class="col">
+            <button class="btn btn-sm btn-outline-primary w-100">Temizle</button>
+          </div>
+          <div class="col">
+            <button class="btn btn-sm btn-primary w-100">Filtrele</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="list mt-5">
+        <div class="p-4">Uygun 6 Kayıt bulundu</div>
+        <table class="table table-hover">
+          <thead>
+          <tr class="table-primary">
+            <th>Kampanya Adı</th>
+            <th>Kampanya Kodu</th>
+            <th>Sözleşme ID</th>
+            <th>Başlama Tarihi</th>
+            <th>Bitiş Tarihi</th>
+            <th class="no-wrap">Aktif / Pasif</th>
+            <th class="no-wrap">Birleştirilebilir</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="cursor-pointer" [routerLink]="['../create',1,false,'definition']">
+            <td>Kampanya 1</td>
+            <td>0123456</td>
+            <td>1241515</td>
+            <td>01.01.2022</td>
+            <td>01.03.2022</td>
+            <td class="text-center"><img src="/assets/img/check.png"></td>
+            <td class="text-center"></td>
+          </tr>
+          <tr class="cursor-pointer" [routerLink]="['../create',1,false,'definition']">
+            <td>Kampanya 1</td>
+            <td>0123456</td>
+            <td>1241515</td>
+            <td>01.01.2022</td>
+            <td>01.03.2022</td>
+            <td class="text-center"><img src="/assets/img/check.png"></td>
+            <td class="text-center"><img src="/assets/img/check.png"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</app-main-content>

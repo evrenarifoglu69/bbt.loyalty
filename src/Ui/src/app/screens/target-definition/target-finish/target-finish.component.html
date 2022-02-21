@@ -4,11 +4,10 @@
     <div class="box">
       <div class="p-5">
         <app-finish
-          title="TEBRİKLER"
+          cardTitle="TEBRİKLER"
           subTitle="Hedef Tanımı başarılı bir şekilde kaydedildi."
-          buttonText="Yeni Hedef Tanımı"
-          (callback)="redirect()"
         >
+          <a [routerLink]="['/']" class="btn btn-primary px-5 mt-3 w-100">Yeni Hedef Tanımı</a>
         </app-finish>
       </div>
     </div>

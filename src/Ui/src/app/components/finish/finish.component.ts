@@ -6,18 +6,12 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./finish.component.scss']
 })
 export class FinishComponent implements OnInit {
-  @Input('title') title: any;
+  @Input('cardTitle') cardTitle: any;
   @Input('subTitle') subTitle: any;
-  @Input('buttonText') buttonText: any;
-  @Output() callback: EventEmitter<any> = new EventEmitter();
 
   constructor() {
   }
 
   ngOnInit(): void {
-  }
-
-  f() {
-    this.callback.emit();
   }
 }

@@ -33,5 +33,8 @@ export class StepService {
 
   finish() {
     this.isFinished = true;
+    this.stepData.map(s => {
+      s.passed = true
+    });
   }
 }
