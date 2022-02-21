@@ -1,0 +1,243 @@
+<app-main-content>
+  <app-step [data]="stepData"></app-step>
+  <div class="container">
+    <form [formGroup]="formGroup">
+      <ngx-smart-modal #modal identifier="modal">
+        <h1>{{selectedText}}</h1>
+        <hr class="blue">
+        <div class="form-panel">
+          <div class="row">
+            <div class="col pl-20px">
+              <div class="form-group">
+                <div class="form-check form-check-inline me-5">
+                  <input class="form-check-input scale-2x" type="radio" name="choice" id="choice1"
+                         formControlName="choice" [value]="1">
+                  <label class="form-check-label ms-2" for="choice1">Tutar</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input scale-2x" type="radio" name="choice" formControlName="choice"
+                         id="choice2" [value]="2">
+                  <label class="form-check-label ms-2" for="choice2">Oran</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group mt-3" *ngIf="formGroup.get('choice')?.value==1">
+            <label for="currency">Para Birimi</label>
+            <select class="form-select" name="currency" id="currency" formControlName="currency"
+                    [ngClass]="{ 'is-invalid': submitted && f.currency.invalid }">
+              <option value="">Seçiniz</option>
+              <option [value]="1">TRL</option>
+              <option [value]="2">USD</option>
+            </select>
+            <div *ngIf="submitted && f.currency.errors" class="invalid-feedback">
+              <div *ngIf="f.currency.errors.required">Para Birimi seçilmelidir.</div>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <label for="price">Kazanım Tutarı</label>
+            <input type="text" class="form-control" name="price" id="price" turkishLira formControlName="price">
+          </div>
+          <!--<div class="form-group mt-3"  *ngIf="formGroup.get('choice')?.value==2">
+            <label for="ratio">Kazanım Oranı</label>
+            <input type="text" class="form-control" name="ratio" id="ratio" formControlName="ratio">
+          </div>-->
+          <div class="form-group mt-3">
+            <label for="maxPrice">Max Tutar</label>
+            <input type="text" class="form-control" name="maxPrice" id="maxPrice" formControlName="maxPrice">
+          </div>
+          <div class="form-group mt-3">
+            <label for="maxBenefit">Max Yararlanma</label>
+            <input type="text" class="form-control" name="maxBenefit" id="maxBenefit" formControlName="maxBenefit">
+          </div>
+        </div>
+        <div class="button-container">
+          <button class="btn btn-primary" type="button" (click)="save()">Tamam</button>
+        </div>
+      </ngx-smart-modal>
+    </form>
+    <div class="box">
+      <div class="p-4">
+        <div class="col-6 m-auto">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Kazanım Kanalı</label>
+              </div>
+            </div>
+          </div>
+          <hr class="blue">
+          <div class="switch-panel">
+            <div class="row mt-3">
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col-3">Tümü</div>
+                  <div class="col-auto d-flex align-items-center">
+                    <ui-switch class="d-flex w-content me-2" size="small"
+                               (valueChange)="changed($event,'Tümü')" [(ngModel)]="switchFormGroup.all"></ui-switch>
+                    <i class="bi bi-pencil-fill cursor-pointer" *ngIf="switchFormGroup.all" (click)="modal.open()"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col-3">Batch</div>
+                  <div class="col d-flex align-items-center">
+                    <ui-switch class="d-flex w-content me-2" size="small"
+                               (valueChange)="changed($event,'Batch')" [(ngModel)]="switchFormGroup.batch"></ui-switch>
+                    <i class="bi bi-pencil-fill cursor-pointer" *ngIf="switchFormGroup.batch"
+                       (click)="modal.open()"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col text-end">Sms</div>
+                  <div class="col-auto d-flex align-items-center">
+                    <ui-switch class="d-flex w-content" size="small"
+                               (valueChange)="changed($event,'Sms')" [(ngModel)]="switchFormGroup.sms"></ui-switch>
+                    <i class="bi bi-pencil-fill cursor-pointer ms-2" *ngIf="switchFormGroup.sms"
+                       (click)="modal.open()"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col-3">Bayi</div>
+                  <div class="col d-flex align-items-center">
+                    <ui-switch class="d-flex w-content me-2" size="small"
+                               (valueChange)="changed($event,'Bayi')" [(ngModel)]="switchFormGroup.dealer"></ui-switch>
+                    <i class="bi bi-pencil-fill cursor-pointer" *ngIf="switchFormGroup.dealer"
+                       (click)="modal.open()"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col text-end">Şube</div>
+                  <div class="col-auto d-flex align-items-center">
+                    <ui-switch class="d-flex w-content" size="small"
+                               (valueChange)="changed($event,'Şube')" [(ngModel)]="switchFormGroup.branch"></ui-switch>
+                    <i class="bi bi-pencil-fill cursor-pointer ms-2" *ngIf="switchFormGroup.branch"
+                       (click)="modal.open()"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col-3">Diğer</div>
+                  <div class="col d-flex align-items-center">
+                    <ui-switch class="d-flex w-content me-2" size="small"
+                               (valueChange)="changed($event,'Diğer')" [(ngModel)]="switchFormGroup.other"></ui-switch>
+                    <i class="bi bi-pencil-fill cursor-pointer" *ngIf="switchFormGroup.other"
+                       (click)="modal.open()"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col text-end">Tablet</div>
+                  <div class="col-auto d-flex align-items-center">
+                    <ui-switch class="d-flex w-content" size="small"
+                               (valueChange)="changed($event,'Tablet')"
+                               [(ngModel)]="switchFormGroup.tablet"></ui-switch>
+                    <i class="bi bi-pencil-fill cursor-pointer ms-2" *ngIf="switchFormGroup.tablet"
+                       (click)="modal.open()"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col-3">İnternet</div>
+                  <div class="col d-flex align-items-center">
+                    <ui-switch class="d-flex w-content me-2" size="small"
+                               (valueChange)="changed($event,'İnternet')"
+                               [(ngModel)]="switchFormGroup.internet"></ui-switch>
+                    <i class="bi bi-pencil-fill cursor-pointer" *ngIf="switchFormGroup.internet"
+                       (click)="modal.open()"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col text-end">Web</div>
+                  <div class="col-auto d-flex align-items-center">
+                    <ui-switch class="d-flex w-content" size="small"
+                               (valueChange)="changed($event,'Web')" [(ngModel)]="switchFormGroup.web"></ui-switch>
+                    <i class="bi bi-pencil-fill cursor-pointer ms-2" *ngIf="switchFormGroup.web"
+                       (click)="modal.open()"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col-3">PTT</div>
+                  <div class="col d-flex align-items-center">
+                    <ui-switch class="d-flex w-content me-2" size="small"
+                               (valueChange)="changed($event,'PTT')" [(ngModel)]="switchFormGroup.ptt"></ui-switch>
+                    <i class="bi bi-pencil-fill cursor-pointer" *ngIf="switchFormGroup.ptt" (click)="modal.open()"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col text-end">Web Bayi</div>
+                  <div class="col-auto d-flex align-items-center">
+                    <ui-switch class="d-flex w-content" size="small"
+                               (valueChange)="changed($event,'Web Bayi')"
+                               [(ngModel)]="switchFormGroup.webDealer"></ui-switch>
+                    <i class="bi bi-pencil-fill cursor-pointer ms-2" *ngIf="switchFormGroup.webDealer"
+                       (click)="modal.open()"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col-3">Remote</div>
+                  <div class="col d-flex align-items-center">
+                    <ui-switch class="d-flex w-content me-2" size="small"
+                               (valueChange)="changed($event,'Remote')"
+                               [(ngModel)]="switchFormGroup.remote"></ui-switch>
+                    <i class="bi bi-pencil-fill cursor-pointer" *ngIf="switchFormGroup.remote"
+                       (click)="modal.open()"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row align-items-center">
+                  <div class="col text-end">Web Mevduat</div>
+                  <div class="col-auto d-flex align-items-center">
+                    <ui-switch class="d-flex w-content" size="small"
+                               (valueChange)="changed($event,'Web Mevduat')"
+                               [(ngModel)]="switchFormGroup.webDeposit"></ui-switch>
+                    <i class="bi bi-pencil-fill cursor-pointer ms-2" *ngIf="switchFormGroup.webDeposit"
+                       (click)="modal.open()"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center flex-column align-items-center mt-4">
+      <a href="#" class="btn-link my-4">PDF Görüntüle</a>
+      <button class="btn btn-orange px-5" type="button" [routerLink]="['../finish']">Kaydet
+      </button>
+    </div>
+  </div>
+</app-main-content>

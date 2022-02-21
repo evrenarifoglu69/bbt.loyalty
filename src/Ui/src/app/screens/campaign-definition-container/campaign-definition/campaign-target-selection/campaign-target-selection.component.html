@@ -1,0 +1,70 @@
+<app-main-content>
+  <app-step [data]="stepData"></app-step>
+  <div class="container">
+    <div class="box">
+      <div class="p-4">
+        <div class="col-10 m-auto">
+          <div class="table table-borderless table-responsive w-100 d-block d-md-table align-middle">
+            <tbody>
+            <tr>
+              <td>
+                <button class="btn btn-primary px-5 w-100">Yeni Ekle</button>
+              </td>
+              <td>
+                <img src="/assets/img/conjunction.png">
+              </td>
+              <td>
+                <button class="btn btn-outline-primary px-5 w-100">Bağlaç</button>
+              </td>
+              <td colspan="2">
+                <button class="btn btn-outline-primary px-5 w-100">Hedef Tanım İsmi</button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="5">
+                <hr class="blue">
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <img src="/assets/img/cross.png" class="me-2">
+                <input class="form-check-input  ms-2 scale-1-5x" type="checkbox" value="">
+              </td>
+              <td>
+                <select class="form-select">
+                  <option value="">ve</option>
+                </select>
+              </td>
+              <td rowspan="2" class="text-center">
+                <img src="/assets/img/conjunction-big.png">
+              </td>
+              <td>
+                <input type="text" class="form-control" value="Debit Kart ile Toplam 1000 TL İşlem">
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <img src="/assets/img/cross.png" class="me-2">
+                <input class="form-check-input  ms-2 scale-1-5x" type="checkbox" value="">
+              </td>
+              <td>
+                <select class="form-select">
+                  <option value="">ve</option>
+                </select>
+              </td>
+              <td>
+                <input type="text" class="form-control" value="Debit Kart ile Toplam 1000 TL İşlem">
+              </td>
+            </tr>
+            </tbody>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+      <button class="btn btn-orange px-5" [routerLink]="['../gains']">Devam</button>
+    </div>
+  </div>
+</app-main-content>
