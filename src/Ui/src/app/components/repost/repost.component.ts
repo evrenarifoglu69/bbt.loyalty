@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {GlobalVariable} from "../../global";
 
 @Component({
   selector: 'app-repost',
@@ -7,8 +8,10 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class RepostComponent implements OnInit {
   @Input('id') id: any;
+  link;
 
   constructor() {
+    this.link = GlobalVariable.definition;
   }
 
   ngOnInit(): void {

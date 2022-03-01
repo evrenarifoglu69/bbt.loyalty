@@ -1,7 +1,7 @@
 <app-main-content>
   <app-step [data]="stepData" [id]="id"></app-step>
   <div class="container">
-    <form [formGroup]="formGroup">
+    <form [formGroup]="formGroup" (ngSubmit)="continue()">
       <div class="box">
         <app-repost *ngIf="id" [id]="id">
         </app-repost>
@@ -98,7 +98,7 @@
         </div>
       </div>
       <div class="d-flex justify-content-center mt-4" *ngIf="!disabled">
-        <button class="btn btn-orange px-5" type="button" (click)="continue()">Devam</button>
+        <button class="btn btn-orange px-5" type="submit">Devam</button>
       </div>
     </form>
   </div>
