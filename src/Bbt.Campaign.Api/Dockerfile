@@ -12,11 +12,11 @@ USER appuser
 FROM mcr.microsoft.com/dotnet/sdk:6.0-focal AS build
 WORKDIR /src
 COPY . .
-RUN dotnet restore "/src/Bbt.Campaign.Api.sln"
-RUN dotnet build "/src/Bbt.Campaign.Api.sln" -c Release -o /app/build
+RUN dotnet restore "src/Bbt.Campaign.Api/Bbt.Campaign.Api.sln"
+RUN dotnet build "src/Bbt.Campaign.Api/Bbt.Campaign.Api/Bbt.Campaign.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "/src/Bbt.Campaign.Api/Bbt.Campaign.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "/src/src/Bbt.Campaign.Api/Bbt.Campaign.Api/Bbt.Campaign.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app

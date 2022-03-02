@@ -63,8 +63,8 @@ jobs:
         with:
           manifests: |
             ${{ github.workspace }}/manifests/Campaign-Api/deployment.yaml
-            ${{ github.workspace }}/manifests/Campaign-API/service.yaml
-          # ${{ github.workspace }}/manifests/Campaign-API/ingress.yaml
+            ${{ github.workspace }}/manifests/Campaign-Api/service.yaml
+          # ${{ github.workspace }}/manifests/Campaign-Api/ingress.yaml
           images: |
             ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.APP_NAME }}:${{ github.sha }}
           imagepullsecrets: |
