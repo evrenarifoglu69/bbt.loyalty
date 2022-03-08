@@ -13,21 +13,33 @@ namespace Bbt.Campaign.Api.Controllers
         {
             _campaignService = campaignService;
         }
-
+        /// <summary>
+        /// Returns the campaign information by Id
+        /// </summary>
+        /// <param name="id">Campaign Id</param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             var adminSektor = await _campaignService.GetCampaignAsync(id);
             return Ok(adminSektor);
         }
-
+        /// <summary>
+        /// Adds new campaign
+        /// </summary>
+        /// <param name="campaign"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Add(CampaignInsertRequest campaign)
         {
             var createResult = await _campaignService.AddAsync(campaign);
             return Ok(createResult);
         }
-
+        /// <summary>
+        /// Updates campaign by Id
+        /// </summary>
+        /// <param name="campaign"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("update")]
         public async Task<IActionResult> Update(CampaignUpdateRequest campaign)
@@ -35,7 +47,11 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _campaignService.UpdateAsync(campaign);
             return Ok(result);
         }
-
+        /// <summary>
+        /// Removes the campaign by Id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("delete")]
         public async Task<IActionResult> Delete(int id)
@@ -43,7 +59,10 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _campaignService.DeleteAsync(id);
             return Ok(result);
         }
-
+        /// <summary>
+        /// Returns the campaign list
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("getall")]
         public async Task<IActionResult> GetList()
@@ -51,6 +70,10 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _campaignService.GetListAsync();
             return Ok(result);
         }
+        /// <summary>
+        /// Returns the form data for insert page
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-insert-form")]
         public async Task<IActionResult> GetInsertForm()
@@ -58,6 +81,11 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _campaignService.GetInsertFormAsync();
             return Ok(result);
         }
+        /// <summary>
+        /// Returns the form data for update page
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-update-form")]
         public async Task<IActionResult> GetUpdateForm(int id)
@@ -65,7 +93,11 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _campaignService.GetUpdateFormAsync(id);
             return Ok(result);
         }
-
+        /// <summary>
+        /// Returns the campaign list by selected filter options
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("get-by-filter")]
         public async Task<IActionResult> GetByFilter(CampaignListFilterRequest request)

@@ -11,7 +11,10 @@ namespace Bbt.Campaign.Api.Controllers
         {
             _parameterService = parameterService;
         }
-
+        /// <summary>
+        /// Returns Action Option list.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-action-options")]
         public async Task<IActionResult> GetActionOptionList()
@@ -19,6 +22,10 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _parameterService.GetActionOptionListAsync();
             return Ok(result);
         }
+        /// <summary>
+        /// Returns Branch list.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-branchs")]
         public async Task<IActionResult> GetBranchList()
@@ -26,6 +33,10 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _parameterService.GetBranchListAsync();
             return Ok(result);
         }
+        /// <summary>
+        /// Returns Business Line list.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-business-lines")]
         public async Task<IActionResult> GetBusinessLineList()
@@ -33,6 +44,10 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _parameterService.GetBusinessLineListAsync();
             return Ok(result);
         }
+        /// <summary>
+        /// Returns Campaign Start Term list.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-campaign-startterms")]
         public async Task<IActionResult> GetCampaignStartTermList()
@@ -40,6 +55,10 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _parameterService.GetCampaignStartTermListAsync();
             return Ok(result);
         }
+        /// <summary>
+        /// Returns Customer Type list.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-customer-types")]
         public async Task<IActionResult> GetCustomerTypeList()
@@ -47,6 +66,10 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _parameterService.GetCustomerTypeListAsync();
             return Ok(result);
         }
+        /// <summary>
+        /// Returns Join Type list.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-join-types")]
         public async Task<IActionResult> GetJoinTypeList()
@@ -54,6 +77,10 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _parameterService.GetJoinTypeListAsync();
             return Ok(result);
         }
+        /// <summary>
+        /// Returns Language list.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-languages")]
         public async Task<IActionResult> GetLanguageList()
@@ -61,6 +88,10 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _parameterService.GetLanguageListAsync();
             return Ok(result);
         }
+        /// <summary>
+        /// Returns Sector list.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-sectors")]
         public async Task<IActionResult> GetSectorList()
@@ -68,6 +99,10 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _parameterService.GetSectorListAsync();
             return Ok(result);
         }
+        /// <summary>
+        /// Returns View Option list.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-view-options")]
         public async Task<IActionResult> GetViewOptionList()
@@ -75,6 +110,10 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _parameterService.GetViewOptionListAsync();
             return Ok(result);
         }
+        /// <summary>
+        /// Returns Program Type list.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-program-types")]
         public async Task<IActionResult> GetProgramTypeList()
@@ -82,6 +121,10 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _parameterService.GetProgramTypeListAsync();
             return Ok(result);
         }
+        /// <summary>
+        /// Returns Trigger Type list.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-trigger-times")]
         public async Task<IActionResult> GetTriggerTimeList()
@@ -89,6 +132,10 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _parameterService.GetTriggerTimeListAsync();
             return Ok(result);
         }
+        /// <summary>
+        /// Returns Verification Time list.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-verification-times")]
         public async Task<IActionResult> GetVerificationTimeList()
@@ -96,6 +143,10 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _parameterService.GetVerificationTimeListAsync();
             return Ok(result);
         }
+        /// <summary>
+        /// Returns Target Source list.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-target-sources")]
         public async Task<IActionResult> GetTargetSourceList()
@@ -103,6 +154,10 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _parameterService.GetTargetSourceListAsync();
             return Ok(result);
         }
+        /// <summary>
+        /// Returns Target View list.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("get-target-views")]
         public async Task<IActionResult> GetTargetViewTypeList()
