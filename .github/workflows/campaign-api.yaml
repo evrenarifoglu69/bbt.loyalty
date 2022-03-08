@@ -23,6 +23,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
+      - name: Replace DB Secret
+        run: |
+          sed -i -e "s/mssql-service/${{ secrets.mssql-service }}/g" ./src/Api/appsettings.json
+          cat ./src/Api/appsettings.json
+          
+      - name: Replace Redis Secret
+        run: |
+          sed -i -e "s/bbt-loyalty-redis-master/${{ secrets.bbt-loyalty-redis-master }}/g" ./src/Api/appsettings.json
+          cat ./src/Api/appsettings.json
+      
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/dotnet@master
         continue-on-error: false
