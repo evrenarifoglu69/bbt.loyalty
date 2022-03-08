@@ -8,6 +8,39 @@
 app-root {
   color: #464646;
 
+  .pl-30{
+    padding-left: 30px;
+  }
+
+  .calendar {
+    position: relative;
+
+    &:after {
+      content: "\f1e4";
+      position:absolute;
+      top:28px;
+      left:7px;
+      font-family: "bootstrap-icons" !important;
+    }
+  }
+
+  .table-custom{
+    th, td{
+      padding-left: 1.5rem!important;
+      padding-right: 1.5rem!important;
+    }
+  }
+
+  .bi-chevron-left, .bi-chevron-right{
+    padding-left: 8px;
+    padding-top: 3px;
+    background-color: gray;
+    color: white;
+    width: 31px;
+    height: 31px;
+    border-radius: 5px;
+  }
+
   .angular-editor-textarea.disabled {
     background-color: #e9ecef !important;
   }
