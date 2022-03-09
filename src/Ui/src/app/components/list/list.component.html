@@ -1,0 +1,62 @@
+<div id="listContent">
+  <div class="container">
+    <div class="box">
+      <ng-content select="[filterForm]">
+
+      </ng-content>
+      <div class="ps-4 pe-4 d-flex">
+        <div class="col">Uygun 6 Kayıt bulundu</div>
+        <div class="col d-flex justify-content-end"><i class="bi bi-file-earmark-excel"></i></div>
+      </div>
+      <div class="mt-2">
+        <table class="table table-hover table-custom">
+          <thead>
+          <tr class="table-primary">
+            <th>Kampanya Adı</th>
+            <th>Kampanya Kodu</th>
+            <th>Sözleşme ID</th>
+            <th>Başlama Tarihi</th>
+            <th>Bitiş Tarihi</th>
+            <th>Program Tipi</th>
+            <th class="no-wrap">Aktif</th>
+            <th class="no-wrap">Birleştirilebilir</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="cursor-pointer" [routerLink]="['../create',1,false,'definition']">
+            <td>Kampanya 1</td>
+            <td>0123456</td>
+            <td>1241515</td>
+            <td>01.01.2022</td>
+            <td>01.03.2022</td>
+            <td>Kampanya</td>
+            <td class="text-center"><img src="/assets/img/check.png"></td>
+            <td class="text-center"></td>
+          </tr>
+          <tr class="cursor-pointer" [routerLink]="['../create',1,false,'definition']">
+            <td>Kampanya 1</td>
+            <td>0123456</td>
+            <td>1241515</td>
+            <td>01.01.2022</td>
+            <td>01.03.2022</td>
+            <td>Kampanya</td>
+            <td class="text-center"><img src="/assets/img/check.png"></td>
+            <td class="text-center"><img src="/assets/img/check.png"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="container d-flex align-items-center justify-content-end">
+    <span>Page:</span>
+    <select class="form-control-sm ms-2 me-2">
+      <option value="25" selected>25</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+    </select>
+    <span class="me-4">of 6</span>
+    <i class="bi-chevron-left me-2"></i>
+    <i class="bi-chevron-right"></i>
+  </div>
+</div>

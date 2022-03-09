@@ -7,6 +7,8 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class MainContentComponent implements OnInit {
   @Input('blockTitle') blockTitle = '';
+  @Input('route') route = '';
+  @Input('newButtonText') newButtonText = '';
 
   constructor() {
   }

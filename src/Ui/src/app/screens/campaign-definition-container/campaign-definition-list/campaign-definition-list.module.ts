@@ -8,6 +8,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {AngularEditorModule} from "@kolkov/angular-editor";
 import {NgxSmartModalModule} from "ngx-smart-modal";
 import {AngularMyDatePickerModule} from "angular-mydatepicker";
+import {ListComponent} from "../../../components/list/list.component";
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    CampaignDefinitionListComponent
+    CampaignDefinitionListComponent,
+    ListComponent
   ],
   imports: [
     CommonModule,
