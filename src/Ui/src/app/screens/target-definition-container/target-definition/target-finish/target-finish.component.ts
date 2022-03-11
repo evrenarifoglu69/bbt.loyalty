@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {StepService} from "../../../services/step.service";
-import {TargetDefinitionService} from "../../../services/target-definition.service";
+import {StepService} from "../../../../services/step.service";
+import {TargetDefinitionService} from "../../../../services/target-definition.service";
 
 @Component({
   selector: 'app-target-finish',

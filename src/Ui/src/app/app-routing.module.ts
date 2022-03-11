@@ -18,7 +18,7 @@ const routes: Routes = [
       },
       {
         path: 'target-definition',
-        loadChildren: () => import('./screens/target-definition/target-definition.module').then(m => m.TargetDefinitionModule)
+        loadChildren: () => import('./screens/target-definition-container/target-definition-container.module').then(m => m.TargetDefinitionContainerModule)
       }
     ]
   },
