@@ -8,6 +8,7 @@ import {StepComponent} from "../components/step/step.component";
 import {UiSwitchModule} from 'ngx-ui-switch';
 import {FinishComponent} from "../components/finish/finish.component";
 import {TurkishLiraDirective} from "../directives/turkish-lira.directive";
+import {ListComponent} from "../components/list/list.component";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {TurkishLiraDirective} from "../directives/turkish-lira.directive";
     OnlyNumberDirective,
     StepComponent,
     FinishComponent,
+    ListComponent,
     TurkishLiraDirective
   ],
   imports: [CommonModule, RouterModule, UiSwitchModule],
@@ -26,6 +28,7 @@ import {TurkishLiraDirective} from "../directives/turkish-lira.directive";
     StepComponent,
     UiSwitchModule,
     FinishComponent,
+    ListComponent,
     TurkishLiraDirective
   ],
   providers: [DecimalPipe]

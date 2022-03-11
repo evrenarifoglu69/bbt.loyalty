@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {CampaignLimitsComponent} from "./campaign-limits.component";
-import {SharedModule} from "../../modules/shared.module";
+import {SharedModule} from "../../../modules/shared.module";
 import {RouterModule, Routes} from "@angular/router";
 import {CampaignLimitsFinishComponent} from './campaign-limits-finish/campaign-limits-finish.component';
 import {ReactiveFormsModule} from "@angular/forms";
@@ -23,5 +23,6 @@ const routes: Routes = [
     ReactiveFormsModule
   ]
 })
+
 export class CampaignLimitsModule {
 }

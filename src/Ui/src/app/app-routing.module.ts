@@ -14,7 +14,7 @@ const routes: Routes = [
       },
       {
         path: 'campaign-limits',
-        loadChildren: () => import('./screens/campaign-limits/campaign-limits.module').then(m => m.CampaignLimitsModule)
+        loadChildren: () => import('./screens/campaign-limits-container/campaign-limits-container.module').then(m => m.CampaignLimitsContainerModule)
       },
       {
         path: 'target-definition',

@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {CampaignDefinitionListComponent} from './campaign-definition-list.component';
+import {CampaignLimitsListComponent} from './campaign-limits-list.component';
 import {RouterModule, Routes} from "@angular/router";
 import {SharedModule} from "../../../modules/shared.module";
 import {ReactiveFormsModule} from "@angular/forms";
@@ -11,13 +11,13 @@ import {AngularMyDatePickerModule} from "angular-mydatepicker";
 
 const routes: Routes = [
   {
-    path: '', component: CampaignDefinitionListComponent
+    path: '', component: CampaignLimitsListComponent
   }
 ]
 
 @NgModule({
   declarations: [
-    CampaignDefinitionListComponent
+    CampaignLimitsListComponent
   ],
   imports: [
     CommonModule,
@@ -30,5 +30,6 @@ const routes: Routes = [
     AngularMyDatePickerModule,
   ]
 })
-export class CampaignDefinitionListModule {
+
+export class CampaignLimitsListModule {
 }

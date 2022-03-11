@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {StepService} from "../../../services/step.service";
-import {CampaignLimitsService} from "../../../services/campaign-limits.service";
+import {StepService} from "../../../../services/step.service";
+import {CampaignLimitsService} from "../../../../services/campaign-limits.service";
 
 @Component({
   selector: 'app-campaign-limits-finish',
