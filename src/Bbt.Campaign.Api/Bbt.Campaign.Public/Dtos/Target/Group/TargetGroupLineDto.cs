@@ -9,9 +9,11 @@ namespace Bbt.Campaign.Public.Dtos.Target.Group
     public class TargetGroupLineDto
     {
         public int Id { get; set; }
-        public TargetGroupDto TargetGroup { get; set; }
+        
         public int TargetGroupId { get; set; }
-        public TargetDto Target { get; set; }
+        public ParameterDto TargetGroup { get; set; }
+        
+        public ParameterDto Target { get; set; }
         public int TargetId { get; set; }
     }
 }
