@@ -10,6 +10,6 @@
         CampaignDetailEnglish = 6,
         CampaignListImage = 7,
         CampaignDetailImage = 8,
-
+        CampaignRuleTCKN = 9,
     }
 }
