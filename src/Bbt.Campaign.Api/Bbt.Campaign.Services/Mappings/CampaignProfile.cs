@@ -15,7 +15,6 @@ namespace Bbt.Campaign.Services.Mappings
             CreateMap<ParameterDto, CampaignEntity>().ReverseMap();
             CreateMap<CampaignInsertRequest, CampaignEntity>().ReverseMap();
             CreateMap<CampaignDetailEntity, CampaignDetailDto>().ReverseMap();
-
             CreateMap<CampaignUpdateRequest, CampaignEntity>().ReverseMap();
         }
     }

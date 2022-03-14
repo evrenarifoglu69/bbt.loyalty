@@ -18,8 +18,22 @@ namespace Bbt.Campaign.EntityFrameworkCore.Initializer
         public void Seed()
         {
             modelBuilder.Entity<BusinessLineEntity>().HasData(Helpers.EnumToObjectList<BusinessLineEnum>());
-            
+
             modelBuilder.Entity<CustomerTypeEntity>().HasData(Helpers.EnumToObjectList<CustomerTypeEnum>());
+
+            modelBuilder.Entity<AchievementTypeEntity>().HasData(Helpers.EnumToObjectList<AchievementTypeEnum>());
+
+            modelBuilder.Entity<ActionOptionEntity>().HasData(Helpers.EnumToObjectList<ActionOptionsEnum>().Select(x => new ActionOptionEntity
+            {
+                Code = x.Id.ToString(),
+                CreatedBy = x.CreatedBy,
+                CreatedOn = x.CreatedOn,
+                Id = x.Id,
+                IsDeleted = x.IsDeleted,
+                LastModifiedBy = x.LastModifiedBy,
+                LastModifiedOn = x.LastModifiedOn,
+                Name = x.Name
+            }).ToList());
 
 
             //    modelBuilder.Entity<CustomerTypeEntity>().HasData(
@@ -47,9 +61,10 @@ namespace Bbt.Campaign.EntityFrameworkCore.Initializer
                 new ViewOptionEntity() { Id = 3, Code = "AK", Name = "Anlık Kampanyalar", CreatedBy = "1", CreatedOn = DateTime.Now, IsDeleted = false, }
             );
 
-            modelBuilder.Entity<ActionOptionEntity>().HasData(
-                new ActionOptionEntity() { Id = 1, Code = "SK", Name = "Ödeme Cashback", CreatedBy = "1", CreatedOn = DateTime.Now, IsDeleted = false }
-            );
+            //modelBuilder.Entity<ActionOptionEntity>().HasData(
+            //    new ActionOptionEntity() { Id = 1, Code = "SK", Name = "Ödeme Cashback", CreatedBy = "1", CreatedOn = DateTime.Now, IsDeleted = false }
+            //    new ActionOptionEntity() { Id = 2, Code = "SK", Name = "Fatura Cashback", CreatedBy = "1", CreatedOn = DateTime.Now, IsDeleted = false }
+            //);
 
             modelBuilder.Entity<JoinTypeEntity>().HasData(
                 new JoinTypeEntity() { Id = 1, Code = "SK", Name = "Tüm Müşteriler", CreatedBy = "1", CreatedOn = DateTime.Now, IsDeleted = false, },
@@ -57,7 +72,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Initializer
                 new JoinTypeEntity() { Id = 3, Code = "SK", Name = "İş Kolu Özelinde", CreatedBy = "1", CreatedOn = DateTime.Now, IsDeleted = false, },
                 new JoinTypeEntity() { Id = 4, Code = "SK", Name = "Şube Özelinde", CreatedBy = "1", CreatedOn = DateTime.Now, IsDeleted = false, },
                 new JoinTypeEntity() { Id = 5, Code = "SK", Name = "Müşteri Tipi Özelinde", CreatedBy = "1", CreatedOn = DateTime.Now, IsDeleted = false, }
-            );          
+            );
 
             modelBuilder.Entity<BranchEntity>().HasData(
                 new BranchEntity() { Id = 1, Code = "9530", Name = "Merkez", CreatedBy = "1", CreatedOn = DateTime.Now, IsDeleted = false, },

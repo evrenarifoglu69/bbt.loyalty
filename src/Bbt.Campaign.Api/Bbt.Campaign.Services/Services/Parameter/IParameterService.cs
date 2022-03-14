@@ -24,6 +24,7 @@ namespace Bbt.Campaign.Services.Services.Parameter
         public Task<BaseResponse<List<ParameterDto>>> GetTargetViewTypeListAsync();
         public Task<BaseResponse<List<ParameterDto>>> GetTriggerTimeListAsync();
         public Task<BaseResponse<List<ParameterDto>>> GetVerificationTimeListAsync();
+        public Task<BaseResponse<List<ParameterDto>>> GetAchievementTypeListAsync();
 
 
 

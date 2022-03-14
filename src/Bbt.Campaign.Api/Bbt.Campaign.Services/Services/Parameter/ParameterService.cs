@@ -113,7 +113,7 @@ namespace Bbt.Campaign.Services.Services.Parameter
         }        
         public Task<BaseResponse<List<ParameterDto>>> GetProgramTypeListAsync()
         {
-            return GetListAsync<ViewOptionEntity>(CacheKeys.ProgramTypeList);
+            return GetListAsync<ProgramTypeEntity>(CacheKeys.ProgramTypeList);
         }
 
         public Task<BaseResponse<List<ParameterDto>>> GetTargetSourceListAsync()
@@ -134,6 +134,10 @@ namespace Bbt.Campaign.Services.Services.Parameter
         public Task<BaseResponse<List<ParameterDto>>> GetVerificationTimeListAsync()
         {
             return GetListAsync<VerificationTimeEntity>(CacheKeys.VerificationTime);
+        }
+        public Task<BaseResponse<List<ParameterDto>>> GetAchievementTypeListAsync()
+        {
+            return GetListAsync<AchievementTypeEntity>(CacheKeys.AchievementType);
         }
     }
 }

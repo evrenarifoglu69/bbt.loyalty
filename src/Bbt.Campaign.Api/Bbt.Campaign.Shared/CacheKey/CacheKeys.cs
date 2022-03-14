@@ -40,5 +40,7 @@
 
         public const string VerificationTime = "VerificationTime";
 
+        public const string AchievementType = "AchievementType";
+
     }
 }

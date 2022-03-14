@@ -18,8 +18,9 @@ namespace Bbt.Campaign.EntityFrameworkCore.Repositories
         Task<List<T>> GetAllAsync();
         Task<List<T>> GetPagedReponseAsync(int pageNumber, int pageSize);
         Task<T> AddAsync(T entity);
-        Task<T> AddAuditableAsync(T entity);
+        Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default(CancellationToken));
         Task UpdateAsync(T entity);
         Task DeleteAsync(T entity);
+        Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
     }
 }

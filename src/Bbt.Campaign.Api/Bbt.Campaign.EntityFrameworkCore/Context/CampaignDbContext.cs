@@ -22,6 +22,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Context
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                //optionsBuilder.UseSqlServer("Server=135.181.44.251; Database=LogTaskManagement; Uid=logTaskUser; Pwd=La2ky8jCTc;");
             }
         }
 
@@ -107,5 +108,8 @@ namespace Bbt.Campaign.EntityFrameworkCore.Context
         public DbSet<TargetViewTypeEntity> TargetViewTypes { get; set; }
         public DbSet<TriggerTimeEntity> TriggerTimes { get; set; }
         public DbSet<VerificationTimeEntity> VerificationTimes { get; set; }
+        public DbSet<AchievementTypeEntity> AchievementTypes { get; set; }
+        public DbSet<TargetGroupEntity> TargetGroups { get; set; }
+        public DbSet<TargetGroupLineEntity> TargetGroupLines { get; set; }
     }
 }

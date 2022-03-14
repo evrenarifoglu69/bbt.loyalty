@@ -165,6 +165,16 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _parameterService.GetTargetViewTypeListAsync();
             return Ok(result);
         }
-
+        /// <summary>
+        /// Returns Achievement Type list.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-achievement-types")]
+        public async Task<IActionResult> GetAchievementTypeList()
+        {
+            var result = await _parameterService.GetAchievementTypeListAsync();
+            return Ok(result);
+        }
     }
 }

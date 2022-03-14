@@ -14,11 +14,15 @@ namespace Bbt.Campaign.Core.DbEntities
         public string DescriptionTr { get; set; }
         public string DescriptionEn { get; set; }
         public string TitleTr { get; set; }
-        public string TitleEn { get; set; }        
+        public string TitleEn { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int? Order { get; set; }
         public int MaxNumberOfUser { get; set; }
+        public bool IsActive { get; set; }
+        public bool IsBundle { get; set; }
+        public bool IsContract { get; set; }
+        public int? ContractId { get; set; }
 
         [ForeignKey("Sector")]
         public int SectorId { get; set; }
@@ -28,20 +32,12 @@ namespace Bbt.Campaign.Core.DbEntities
         public int ViewOptionId { get; set; }
         public ViewOptionEntity ViewOption { get; set; }
 
-        [ForeignKey("ActionOption")]
-        public int ActionOptionId { get; set; }
-        public ActionOptionEntity ActionOption { get; set; }
-
-        public bool IsActive { get; set; }
-        public bool IsBundle { get; set; }
-        public bool IsContract { get; set; }
-        public virtual CampaignRuleEntity CampaignRule { get; set; }
-        public int? ContractId { get; set; }
-
         [ForeignKey("ProgramType")]
         public int ProgramTypeId { get; set; }
         public ProgramTypeEntity ProgramType { get; set; }
 
+        public virtual CampaignRuleEntity CampaignRule { get; set; }
         public virtual CampaignDetailEntity CampaignDetail { get; set; }
+        public virtual ICollection<CampaignAchievementEntity> Achievements { get; set; }
     }
 }

@@ -28,9 +28,10 @@ namespace Bbt.Campaign.Services.Services.Campaign
         {
             CheckValidationAsync(campaign);
 
-            var entity = _mapper.Map<CampaignEntity>(campaign);            
+            var entity = _mapper.Map<CampaignEntity>(campaign);
             entity.Code = string.Empty;
-            entity = await _unitOfWork.GetRepository<CampaignEntity>().AddAuditableAsync(entity);
+
+            entity = await _unitOfWork.GetRepository<CampaignEntity>().AddAsync(entity);
             
             await _unitOfWork.SaveChangesAsync();
             var mappedCampaign = _mapper.Map<CampaignDto>(entity);
@@ -55,6 +56,7 @@ namespace Bbt.Campaign.Services.Services.Campaign
             if (campaignEntity != null)
             {
                 var mappedCampaign = _mapper.Map<CampaignDto>(campaignEntity);
+                mappedCampaign.Code = mappedCampaign.Id.ToString();
                 return await BaseResponse<CampaignDto>.SuccessAsync(mappedCampaign);
             }
             return await BaseResponse<CampaignDto>.FailAsync("Kampanya bulunamadı.");
@@ -130,14 +132,12 @@ namespace Bbt.Campaign.Services.Services.Campaign
                     entity.CampaignDetail.ContentEn = campaign.CampaignDetail.ContentEn;
                 }
 
-                entity.ActionOptionId = campaign.ActionOptionId;
                 entity.ContractId = campaign.ContractId;
                 entity.ProgramTypeId = campaign.ProgramTypeId;
                 entity.SectorId = campaign.SectorId;
                 entity.ViewOptionId = campaign.ViewOptionId;
                 entity.IsBundle = campaign.IsBundle;
                 entity.IsContract = campaign.IsContract;
-                entity.Code = campaign.Code;
                 entity.DescriptionTr = campaign.DescriptionTr;
                 entity.DescriptionEn = campaign.DescriptionEn;
                 entity.EndDate = campaign.EndDate;
@@ -191,15 +191,6 @@ namespace Bbt.Campaign.Services.Services.Campaign
                     throw new Exception("Görüntüleme seçilmelidir.");
             }
 
-            if (input.ActionOptionId <= 0)
-                throw new Exception("Aksiyon seçilmelidir.");
-            else
-            {
-                var actionOption = (await _parameterService.GetActionOptionListAsync())?.Data?.Any(x => x.Id == input.ActionOptionId);
-                if (!actionOption.GetValueOrDefault(false))
-                    throw new Exception("Aksiyon seçilmelidir.");
-            }
-
             //campaign detail validasyonları
 
             if (string.IsNullOrWhiteSpace(input.CampaignDetail?.SummaryTr))
@@ -240,7 +231,7 @@ namespace Bbt.Campaign.Services.Services.Campaign
             var campaignList = campaignQuery.Select(x => new CampaignListDto
             {
                 Id = x.Id,
-                Code = x.Code,
+                Code = x.Id.ToString(),
                 StartDate = x.StartDate,
                 EndDate = x.EndDate,
                 ContractId = x.ContractId,

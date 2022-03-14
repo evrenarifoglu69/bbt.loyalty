@@ -5,7 +5,6 @@ namespace Bbt.Campaign.Public.Models.Campaign
     public class CampaignInsertRequest
     {
         public string Name { get; set; }
-        public string Code { get; set; }
         public string DescriptionTr { get; set; }
         public string DescriptionEn { get; set; }
         public string TitleTr { get; set; }
@@ -16,7 +15,6 @@ namespace Bbt.Campaign.Public.Models.Campaign
         public int MaxNumberOfUser { get; set; }
         public int SectorId { get; set; }
         public int ViewOptionId { get; set; }
-        public int ActionOptionId { get; set; }
         public bool IsActive { get; set; }
         public bool IsContract { get; set; }
         public bool IsBundle { get; set; }

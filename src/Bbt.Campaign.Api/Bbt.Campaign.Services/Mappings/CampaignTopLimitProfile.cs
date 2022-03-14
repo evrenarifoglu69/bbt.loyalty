@@ -12,6 +12,8 @@ namespace Bbt.Campaign.Services.Mappings
             CreateMap<CampaignTopLimitDto, CampaignTopLimitEntity>().ReverseMap();
             CreateMap<CampaignTopLimitInsertRequest, CampaignTopLimitEntity>().ReverseMap();
             CreateMap<CampaignTopLimitUpdateRequest, CampaignTopLimitEntity>().ReverseMap();
+            CreateMap<CampaignTopLimitListDto, CampaignTopLimitEntity>().ReverseMap();
+            CreateMap<CampaignTopLimitInsertBaseRequest, CampaignTopLimitEntity>().ReverseMap();
         }
     }
 }

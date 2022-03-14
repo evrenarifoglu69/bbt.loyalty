@@ -2,6 +2,7 @@
 using Bbt.Campaign.Core.DbEntities;
 using Bbt.Campaign.Public.Dtos.Target;
 using Bbt.Campaign.Public.Dtos.Target.Detail;
+using Bbt.Campaign.Public.Dtos.Target.Group;
 using Bbt.Campaign.Public.Dtos.Target.Source;
 using Bbt.Campaign.Public.Dtos.Target.TriggerTime;
 using Bbt.Campaign.Public.Dtos.Target.VerificationTime;
@@ -23,6 +24,8 @@ namespace Bbt.Campaign.Services.Mappings
             CreateMap<TriggerTimeDto, TriggerTimeEntity>().ReverseMap();
             CreateMap<TargetViewTypeDto, TargetViewTypeEntity>().ReverseMap();
             CreateMap<VerificationTimeDto, VerificationTimeEntity>().ReverseMap();
+            CreateMap<TargetGroupDto, TargetGroupEntity>().ReverseMap();
+            CreateMap<TargetGroupLineDto, TargetGroupLineEntity>().ReverseMap();
         }
     }
 }

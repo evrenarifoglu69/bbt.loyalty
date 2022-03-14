@@ -133,27 +133,15 @@ namespace Bbt.Campaign.EntityFrameworkCore.Repositories
             return Task.CompletedTask;
         }
 
-        public async Task<T> AddAuditableAsync(T entity)
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
         {
-            if (typeof(IAuditableBaseEntity).IsAssignableFrom(typeof(T)))
-            {
-                IAuditableBaseEntity _entity = (IAuditableBaseEntity)entity;
+            return await _dbSet.AnyAsync(predicate);
+        }
 
-                _entity.IsDeleted = true;
-                _entity.LastModifiedOn = null;
-                _entity.LastModifiedBy = null;
-                _entity.CreatedOn = DateTime.Now;
-                _entity.CreatedBy = string.Empty;
-
-                await this.AddAsync((T)_entity);
-                return (T)_entity;
-            }
-            else
-            {
-                await this.AddAsync(entity);
-                return entity;
-            }
-
+        public Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            _dbSet.AddRangeAsync(entities);
+            return Task.CompletedTask;
         }
     }
 }

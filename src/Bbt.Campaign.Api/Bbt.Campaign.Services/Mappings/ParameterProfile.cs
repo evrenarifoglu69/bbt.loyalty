@@ -21,8 +21,9 @@ namespace Bbt.Campaign.Services.Mappings
             CreateMap<ParameterDto, CampaignChannelEntity>().ReverseMap();
             CreateMap<ParameterDto, CurrencyEntity>().ReverseMap();
             CreateMap<ParameterDto, TargetOperationEntity>().ReverseMap();
-            CreateMap<ParameterDto, TargetOperationEntity>().ReverseMap();
+            //CreateMap<ParameterDto, TargetOperationEntity>().ReverseMap();
             CreateMap<ParameterDto, ProgramTypeEntity>().ReverseMap();
+            CreateMap<ParameterDto, AchievementTypeEntity>().ReverseMap();
         }
     }
 }

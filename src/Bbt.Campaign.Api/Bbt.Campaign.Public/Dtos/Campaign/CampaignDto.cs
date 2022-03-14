@@ -14,8 +14,6 @@ namespace Bbt.Campaign.Public.Dtos.Campaign
         public string DescriptionDetailEnglish { get; set; }
         public string TitleDetail { get; set; }
         public string TitleDetailEnglish { get; set; }
-        //public string CampaignDetail { get; set; }
-        //public string CampaignDetailDetail { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int Order { get; set; }
@@ -27,17 +25,12 @@ namespace Bbt.Campaign.Public.Dtos.Campaign
         public int ViewOptionId { get; set; }
         public ViewOptionDto ViewOption { get; set; }
 
-        public int ActionOptionId { get; set; }
-        public ActionOptionDto ActionOption { get; set; }
-
         public bool IsActive { get; set; }
         public bool IsBundle { get; set; }
 
         public int Id { get; set; }
         public int? ContractId { get; set; }
         public int ProgramTypeId { get; set; }
-
         public CampaignDetailDto CampaignDetail { get; set; }
-        //public virtual CampaignRuleEntity CampaignRule { get; set; }
     }
 }
