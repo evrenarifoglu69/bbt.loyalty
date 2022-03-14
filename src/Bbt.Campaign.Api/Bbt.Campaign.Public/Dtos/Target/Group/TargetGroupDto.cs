@@ -12,8 +12,10 @@ namespace Bbt.Campaign.Public.Dtos.Target.Group
         public int Id { get; set; }
         [MaxLength(250), Required]
         public string Name { get; set; }
-        public int TargetGroupLineId { get; set; }
-        public ParameterDto TargetGroupLine { get; set; }
+        //public int TargetGroupLineId { get; set; }
+        //public TargetGroupLineDto TargetGroupLine { get; set; }
+
+        public ICollection<TargetGroupLineDto> TargetGroupLine { get; set; }
         public string CreatedBy { get; set; }
         public DateTime CreatedOn { get; set; }
         public string? LastModifiedBy { get; set; }

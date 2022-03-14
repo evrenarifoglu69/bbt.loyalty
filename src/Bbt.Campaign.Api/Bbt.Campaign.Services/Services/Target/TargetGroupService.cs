@@ -26,12 +26,16 @@ namespace Bbt.Campaign.Services.Services.Target
 
         public async Task<BaseResponse<TargetGroupDto>> GetTargetGroupAsync(int id)
         {
-            var targetGroupEntity = await _unitOfWork.GetRepository<TargetGroupEntity>().GetByIdAsync(id);
+            var targetGroupEntity = await _unitOfWork.GetRepository<TargetGroupEntity>()
+                .GetAll(x => x.Id == id && x.IsDeleted != true)
+                .Include(x => x.TargetGroupLines.Where(t => t.IsDeleted != true))
+                .FirstOrDefaultAsync();
+
             if (targetGroupEntity != null)
             {
                 TargetGroupDto targetGroupDto = _mapper.Map<TargetGroupDto>(targetGroupEntity);
+                targetGroupDto.TargetGroupLine = targetGroupEntity.TargetGroupLines.Select(x => _mapper.Map<TargetGroupLineDto>(x)).ToList();
                 return await BaseResponse<TargetGroupDto>.SuccessAsync(targetGroupDto);
-
             }
             return null;
         }
@@ -39,7 +43,9 @@ namespace Bbt.Campaign.Services.Services.Target
         public async Task<BaseResponse<List<TargetGroupDto>>> GetListAsync()
         {
             List<TargetGroupDto> targetGroups = _unitOfWork.GetRepository<TargetGroupEntity>()
-                .GetAll().Select(x => _mapper.Map<TargetGroupDto>(x)).ToList();
+                .GetAll(x => x.IsDeleted != true)
+                .Select(x => _mapper.Map<TargetGroupDto>(x))
+                .ToList();
             return await BaseResponse<List<TargetGroupDto>>.SuccessAsync(targetGroups);
         }
 
