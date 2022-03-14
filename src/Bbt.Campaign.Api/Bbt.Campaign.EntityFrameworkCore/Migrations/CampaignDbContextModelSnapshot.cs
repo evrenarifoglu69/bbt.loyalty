@@ -60,7 +60,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 1,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1839),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1034),
                             IsDeleted = false,
                             Name = "Haftalık"
                         },
@@ -68,7 +68,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 2,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1840),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1035),
                             IsDeleted = false,
                             Name = "Aylık"
                         },
@@ -76,7 +76,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 3,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1841),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1036),
                             IsDeleted = false,
                             Name = "Yıllık"
                         });
@@ -120,7 +120,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 1,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1138),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(322),
                             IsDeleted = false,
                             Name = "Mevduat"
                         },
@@ -128,7 +128,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 2,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1178),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(391),
                             IsDeleted = false,
                             Name = "Kredi"
                         },
@@ -136,7 +136,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 3,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1199),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(428),
                             IsDeleted = false,
                             Name = "Cashback"
                         });
@@ -186,7 +186,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 1,
                             Code = "1",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1432),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(641),
                             IsDeleted = false,
                             Name = "Ödeme Cashback"
                         },
@@ -195,7 +195,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 2,
                             Code = "2",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1474),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(706),
                             IsDeleted = false,
                             Name = "Fatura Cashback"
                         });
@@ -245,7 +245,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 1,
                             Code = "9530",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1717),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(944),
                             IsDeleted = false,
                             Name = "Merkez"
                         },
@@ -254,7 +254,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 2,
                             Code = "9531",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1718),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(945),
                             IsDeleted = false,
                             Name = "Çamlıca Şubesi"
                         });
@@ -298,7 +298,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 1,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(48),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 835, DateTimeKind.Local).AddTicks(8730),
                             IsDeleted = false,
                             Name = "Bireysel (B)"
                         },
@@ -306,7 +306,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 2,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(193),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 835, DateTimeKind.Local).AddTicks(8968),
                             IsDeleted = false,
                             Name = "Ticari (T)"
                         },
@@ -314,7 +314,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 3,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(219),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 835, DateTimeKind.Local).AddTicks(9019),
                             IsDeleted = false,
                             Name = "Dijital (X)"
                         },
@@ -322,7 +322,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 4,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(241),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 835, DateTimeKind.Local).AddTicks(9055),
                             IsDeleted = false,
                             Name = "Ticari 1 (I)"
                         },
@@ -330,7 +330,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 5,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(261),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 835, DateTimeKind.Local).AddTicks(9093),
                             IsDeleted = false,
                             Name = "Ticari 2 (P)"
                         },
@@ -338,7 +338,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 6,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(282),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 835, DateTimeKind.Local).AddTicks(9126),
                             IsDeleted = false,
                             Name = "Ticari 3 (M)"
                         },
@@ -346,7 +346,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 7,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(303),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 835, DateTimeKind.Local).AddTicks(9163),
                             IsDeleted = false,
                             Name = "Kurumsal (K)"
                         },
@@ -354,7 +354,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 8,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(322),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 835, DateTimeKind.Local).AddTicks(9388),
                             IsDeleted = false,
                             Name = "Kurumsal 1 (A)"
                         });
@@ -483,7 +483,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 1,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1805),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(996),
                             IsDeleted = false,
                             Name = "Tümü"
                         },
@@ -491,7 +491,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 2,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1807),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(998),
                             IsDeleted = false,
                             Name = "Batch"
                         },
@@ -499,7 +499,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 3,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1808),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1000),
                             IsDeleted = false,
                             Name = "Bayi"
                         },
@@ -507,7 +507,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 4,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1810),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1001),
                             IsDeleted = false,
                             Name = "Diğer"
                         },
@@ -515,7 +515,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 5,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1811),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1002),
                             IsDeleted = false,
                             Name = "İnternet"
                         },
@@ -523,7 +523,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 6,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1812),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1003),
                             IsDeleted = false,
                             Name = "Ptt"
                         },
@@ -531,7 +531,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 7,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1813),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1003),
                             IsDeleted = false,
                             Name = "Remote"
                         },
@@ -539,7 +539,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 8,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1814),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1004),
                             IsDeleted = false,
                             Name = "Sms"
                         },
@@ -547,7 +547,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 9,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1816),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1005),
                             IsDeleted = false,
                             Name = "Şube"
                         },
@@ -555,7 +555,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 10,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1817),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1006),
                             IsDeleted = false,
                             Name = "Tablet"
                         },
@@ -563,7 +563,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 11,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1818),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1007),
                             IsDeleted = false,
                             Name = "Web"
                         },
@@ -571,7 +571,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 12,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1819),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1008),
                             IsDeleted = false,
                             Name = "Web Bayi"
                         },
@@ -579,7 +579,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 13,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1820),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1009),
                             IsDeleted = false,
                             Name = "Web Mevduat"
                         });
@@ -1037,7 +1037,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 1,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1738),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(959),
                             IsDeleted = false,
                             Name = "Katılım Anında"
                         },
@@ -1045,7 +1045,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 2,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1740),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(961),
                             IsDeleted = false,
                             Name = "Dönem Başlangıcı"
                         });
@@ -1078,19 +1078,14 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                     b.Property<DateTime?>("LastModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("TargetDefinitionId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TargetOperationId")
+                    b.Property<int>("TargetGroupId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CampaignId");
 
-                    b.HasIndex("TargetDefinitionId");
-
-                    b.HasIndex("TargetOperationId");
+                    b.HasIndex("TargetGroupId");
 
                     b.ToTable("CampaignTargets");
                 });
@@ -1195,7 +1190,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 1,
                             Code = "TRY",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1856),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1075),
                             IsDeleted = false,
                             Name = "TRY"
                         },
@@ -1204,7 +1199,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 2,
                             Code = "GBP",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1858),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1076),
                             IsDeleted = false,
                             Name = "GBP"
                         },
@@ -1213,7 +1208,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 3,
                             Code = "EUR",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1859),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1077),
                             IsDeleted = false,
                             Name = "EUR"
                         },
@@ -1222,7 +1217,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 4,
                             Code = "USD",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1860),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1078),
                             IsDeleted = false,
                             Name = "USD"
                         });
@@ -1266,7 +1261,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 1,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(793),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 835, DateTimeKind.Local).AddTicks(9896),
                             IsDeleted = false,
                             Name = "Gerçek"
                         },
@@ -1274,7 +1269,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 2,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(852),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 835, DateTimeKind.Local).AddTicks(9990),
                             IsDeleted = false,
                             Name = "Tüzel"
                         },
@@ -1282,7 +1277,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 3,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(875),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(31),
                             IsDeleted = false,
                             Name = "Ortak"
                         },
@@ -1290,7 +1285,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 4,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(894),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(62),
                             IsDeleted = false,
                             Name = "Reşit Olmayan"
                         },
@@ -1298,7 +1293,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 5,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(914),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(97),
                             IsDeleted = false,
                             Name = "Adi Ortaklık"
                         });
@@ -1348,7 +1343,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 1,
                             Code = "SK",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1695),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(925),
                             IsDeleted = false,
                             Name = "Tüm Müşteriler"
                         },
@@ -1357,7 +1352,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 2,
                             Code = "SK",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1697),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(926),
                             IsDeleted = false,
                             Name = "Müşteri Özelinde"
                         },
@@ -1366,7 +1361,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 3,
                             Code = "SK",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1698),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(927),
                             IsDeleted = false,
                             Name = "İş Kolu Özelinde"
                         },
@@ -1375,7 +1370,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 4,
                             Code = "SK",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1700),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(928),
                             IsDeleted = false,
                             Name = "Şube Özelinde"
                         },
@@ -1384,7 +1379,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 5,
                             Code = "SK",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1702),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(929),
                             IsDeleted = false,
                             Name = "Müşteri Tipi Özelinde"
                         });
@@ -1434,7 +1429,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 1,
                             Code = "TR",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1564),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(808),
                             IsDeleted = false,
                             Name = "Türkçe"
                         },
@@ -1443,7 +1438,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 2,
                             Code = "EN",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1566),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(809),
                             IsDeleted = false,
                             Name = "İngilizce"
                         });
@@ -1493,7 +1488,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 1,
                             Code = "SK",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1874),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1091),
                             IsDeleted = false,
                             Name = "Sadakat"
                         },
@@ -1502,7 +1497,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 2,
                             Code = "GK",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1875),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1092),
                             IsDeleted = false,
                             Name = "Kampanya"
                         },
@@ -1511,7 +1506,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 3,
                             Code = "AK",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1951),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1093),
                             IsDeleted = false,
                             Name = "Kazanım"
                         });
@@ -1561,7 +1556,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 1,
                             Code = "Akr",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1657),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(888),
                             IsDeleted = false,
                             Name = "Akaryakıt"
                         },
@@ -1570,7 +1565,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 2,
                             Code = "IT",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1659),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(890),
                             IsDeleted = false,
                             Name = "Bilişim"
                         },
@@ -1579,7 +1574,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 3,
                             Code = "Bnk",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1660),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(891),
                             IsDeleted = false,
                             Name = "Bankacılık"
                         });
@@ -1864,7 +1859,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 1,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1787),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(974),
                             IsDeleted = false,
                             Name = "ve"
                         },
@@ -1872,7 +1867,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 2,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1789),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(976),
                             IsDeleted = false,
                             Name = "veya"
                         },
@@ -1880,7 +1875,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 3,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1790),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(976),
                             IsDeleted = false,
                             Name = "kesişim"
                         },
@@ -1888,7 +1883,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 4,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1791),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(981),
                             IsDeleted = false,
                             Name = "fark"
                         });
@@ -1932,7 +1927,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 1,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(2054),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1174),
                             IsDeleted = false,
                             Name = "Akış"
                         },
@@ -1940,7 +1935,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 2,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(2055),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1175),
                             IsDeleted = false,
                             Name = "Sorgu"
                         });
@@ -1984,7 +1979,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 1,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1970),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1109),
                             IsDeleted = false,
                             Name = "Progress Bar"
                         },
@@ -1992,7 +1987,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 2,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1972),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1110),
                             IsDeleted = false,
                             Name = "Bilgi"
                         });
@@ -2036,7 +2031,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 1,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(2023),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1145),
                             IsDeleted = false,
                             Name = "Hedefe Ulaşıldığı Anda"
                         },
@@ -2044,7 +2039,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 2,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(2025),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1147),
                             IsDeleted = false,
                             Name = "Tamamlandıktan Sonra"
                         });
@@ -2088,7 +2083,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 1,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(2039),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1160),
                             IsDeleted = false,
                             Name = "İlk Kontrol Edildiğinde"
                         },
@@ -2096,7 +2091,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         {
                             Id = 2,
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(2041),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(1161),
                             IsDeleted = false,
                             Name = "Her Kontrol Edildiğinde"
                         });
@@ -2146,7 +2141,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 1,
                             Code = "SK",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1679),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(909),
                             IsDeleted = false,
                             Name = "Sürekli Kampanyalar"
                         },
@@ -2155,7 +2150,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 2,
                             Code = "GK",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1680),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(910),
                             IsDeleted = false,
                             Name = "Geçici Kampanyalar"
                         },
@@ -2164,7 +2159,7 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                             Id = 3,
                             Code = "AK",
                             CreatedBy = "1",
-                            CreatedOn = new DateTime(2022, 3, 14, 13, 49, 13, 691, DateTimeKind.Local).AddTicks(1681),
+                            CreatedOn = new DateTime(2022, 3, 14, 23, 10, 17, 836, DateTimeKind.Local).AddTicks(911),
                             IsDeleted = false,
                             Name = "Anlık Kampanyalar"
                         });
@@ -2356,23 +2351,15 @@ namespace Bbt.Campaign.EntityFrameworkCore.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Bbt.Campaign.Core.DbEntities.TargetDefinitionEntity", "TargetDefinition")
+                    b.HasOne("Bbt.Campaign.Core.DbEntities.TargetGroupEntity", "TargetGroup")
                         .WithMany()
-                        .HasForeignKey("TargetDefinitionId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Bbt.Campaign.Core.DbEntities.TargetOperationEntity", "TargetOperation")
-                        .WithMany()
-                        .HasForeignKey("TargetOperationId")
+                        .HasForeignKey("TargetGroupId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Campaign");
 
-                    b.Navigation("TargetDefinition");
-
-                    b.Navigation("TargetOperation");
+                    b.Navigation("TargetGroup");
                 });
 
             modelBuilder.Entity("Bbt.Campaign.Core.DbEntities.CampaignTopLimitEntity", b =>

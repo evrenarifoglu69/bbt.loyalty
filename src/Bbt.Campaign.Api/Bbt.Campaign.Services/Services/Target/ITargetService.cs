@@ -11,5 +11,6 @@ namespace Bbt.Target.Services.Services.Target
         public Task<BaseResponse<TargetListFilterResponse>> GetByFilterAsync(TargetListFilterRequest request);
         public Task<BaseResponse<TargetDto>> DeleteAsync(int id);
         public Task<BaseResponse<TargetDto>> GetTargetAsync(int id);
+        public Task<BaseResponse<List<TargetDto>>> GetListAsync();
     }
 }

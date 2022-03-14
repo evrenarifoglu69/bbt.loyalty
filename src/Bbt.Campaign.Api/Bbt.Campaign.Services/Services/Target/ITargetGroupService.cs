@@ -13,5 +13,7 @@ namespace Bbt.Campaign.Services.Services.Target
         public Task<BaseResponse<TargetGroupDto>> UpdateAsync(TargetGroupUpdateRequest request);       
         public Task<BaseResponse<TargetGroupDto>> DeleteAsync(int id);
         public Task<BaseResponse<TargetGroupDto>> DeleteLineAsync(int id);
+        public Task<BaseResponse<TargetGroupInsertFormDto>> GetInsertForm();
+        public Task<BaseResponse<TargetGroupUpdateFormDto>> GetUpdateForm(int id);
     }
 }

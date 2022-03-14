@@ -9,6 +9,7 @@ using Bbt.Campaign.Public.Models.Target.Group;
 using Bbt.Campaign.Services.Services.Parameter;
 using Bbt.Campaign.Shared.Extentions;
 using Bbt.Campaign.Shared.ServiceDependencies;
+using Bbt.Target.Services.Services.Target;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bbt.Campaign.Services.Services.Target
@@ -17,11 +18,13 @@ namespace Bbt.Campaign.Services.Services.Target
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly ITargetService _targetService;
 
-        public TargetGroupService(IUnitOfWork unitOfWork, IMapper mapper)
+        public TargetGroupService(IUnitOfWork unitOfWork, IMapper mapper, ITargetService targetService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _targetService = targetService;
         }
 
         public async Task<BaseResponse<TargetGroupDto>> GetTargetGroupAsync(int id)
@@ -124,6 +127,28 @@ namespace Bbt.Campaign.Services.Services.Target
             await _unitOfWork.GetRepository<TargetGroupLineEntity>().UpdateAsync(entity);
             await _unitOfWork.SaveChangesAsync();
             return await GetTargetGroupAsync(entity.Id);
+        }
+
+        public async Task<BaseResponse<TargetGroupInsertFormDto>> GetInsertForm()
+        {
+            TargetGroupInsertFormDto response = new TargetGroupInsertFormDto();
+            await FillForm(response);
+
+            return await BaseResponse<TargetGroupInsertFormDto>.SuccessAsync(response);
+        }
+
+        public async Task<BaseResponse<TargetGroupUpdateFormDto>> GetUpdateForm(int id)
+        {
+            TargetGroupUpdateFormDto response = new TargetGroupUpdateFormDto();
+            await FillForm(response);
+            response.TargetGroup = (await GetTargetGroupAsync(id))?.Data;
+
+            return await BaseResponse<TargetGroupUpdateFormDto>.SuccessAsync(response);
+        }
+
+        private async Task FillForm(TargetGroupInsertFormDto response)
+        {
+            response.TargetList = (await _targetService.GetListAsync())?.Data.Select(x => _mapper.Map<ParameterDto>(x)).ToList();
         }
     }
 }

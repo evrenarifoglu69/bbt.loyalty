@@ -89,5 +89,29 @@ namespace Bbt.Campaign.Api.Controllers
             var result = await _targetGroupService.DeleteLineAsync(id);
             return Ok(result);
         }
+
+        /// <summary>
+        /// Returns the form data for insert page
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-insert-form")]
+        public async Task<IActionResult> GetInsertForm()
+        {
+            var result = await _targetGroupService.GetInsertForm();
+            return Ok(result);
+        }
+        /// <summary>
+        /// Returns the form data for update page
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("get-update-form")]
+        public async Task<IActionResult> GetUpdateForm(int id)
+        {
+            var result = await _targetGroupService.GetUpdateForm(id);
+            return Ok(result);
+        }
     }
 }

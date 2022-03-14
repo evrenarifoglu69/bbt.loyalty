@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Bbt.Campaign.Core.DbEntities;
+using Bbt.Campaign.Public.Dtos;
 using Bbt.Campaign.Public.Dtos.Target;
 using Bbt.Campaign.Public.Dtos.Target.Detail;
 using Bbt.Campaign.Public.Dtos.Target.Group;
@@ -26,6 +27,7 @@ namespace Bbt.Campaign.Services.Mappings
             CreateMap<VerificationTimeDto, VerificationTimeEntity>().ReverseMap();
             CreateMap<TargetGroupDto, TargetGroupEntity>().ReverseMap();
             CreateMap<TargetGroupLineDto, TargetGroupLineEntity>().ReverseMap();
+            CreateMap<TargetDto, ParameterDto>().ReverseMap();
         }
     }
 }
